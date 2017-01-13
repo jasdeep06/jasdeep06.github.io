@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="towards-backpropagation : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://jasdeep06.github.io/towards-backpropagation/assets/css/style.css?v=bafd545cfb373b6a3e476f22ba164707d3743188">
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+    <title>towards-backpropagation</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+
+          <h1 id="project_title">Backpropagation</h1>
+          <h2 id="project_tagline"></h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="towards-backpropagation">Towards-Backpropagation</h1>
+<p>Backpropagation is by far the most important algorithm for training a neural network.Although alternatives such as <a href="https://en.wikipedia.org/wiki/Genetic_algorithm">Genetic Algorithm</a> or Exhaustive search exist but their performance is vastly inferior as compared to backpropagation.Many resources are scattered across web that explain backpropagation but they can be pretty intimidating for a beginner due to their immensely mathematical nature.This series of blogposts is aimed to develop an intuition for backpropagation algorithm which would enable the reader to implement backpropagation on the go. In this post we will try to develop an intuition how change in input of a simple node system will affect its output.</p>
+
+<h3 id="why-understand-it-when-tensorflowtheano-are-there">Why understand it when Tensorflow/Theano are there?</h3>
+
+<p>Libraries like Tensorflow and Theano give us a ready-made implementation of backpropagation algorithm and do everything for us in few lines of code.Why to go through all this fuss?Well,for me personally, it feels good to know the intricacies of what I am working with but the “feel-good” factor for some folks is not a good enough reason.For them,A lot of times while implementing research papers,you would come across structures other than networks to implement backpropagation through.Also problems like Vanishing gradients on sigmoids,Dying ReLUs,Exploding gradients in RNNs can be better understood and  prevented if you know intricacies of backpropagation.
+So enough of motivation!Bottom line is that “You should understand backpropagation.”</p>
+
+<blockquote>
+  <p><em>A lot of times while implementing research papers,you would come across structures other than networks to implement backpropagation through.Also problems like Vanishing gradients on sigmoids,Dying ReLUs,Exploding gradients in RNNs can be better understood and  prevented if you know intricacies of backpropagation.</em></p>
+</blockquote>
+
+<p>So lets get started!</p>
+
+<p>Before understanding backpropagation,let us go through the basic case on which majority of this post will be based. It consists of a node accepting two inputs <code class="highlighter-rouge">a,b</code> and producing an output. It will be referred to as <em>default case</em> for rest of this post.</p>
+
+<p><img src="https://github.com/jasdeep06/towards-backpropagation/blob/master/images/14843162053857.png?raw=true" alt="FIG(Default case)" /></p>
+
+<p>The node accepts two inputs <code class="highlighter-rouge">a,b</code> and does a product operation on them and gives <code class="highlighter-rouge">a*b</code> as output.</p>
+
+<p>Aim-Our aim is to increase the output by tweaking values of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code>.</p>
+
+<h4 id="method1">Method#1</h4>
+<p>The first method is the most obvious one.Let us randomly increase the values of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code> by a small quantity <code class="highlighter-rouge">h</code> times a random number:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    
+def product(a,b):
+	return a*b
+a=4
+b=3
+h=0.01
+a=a+h*(random.random())
+b=b+h*(random.random())
+print(product(a,b))
+</code></pre>
+</div>
+
+<p>The output for above program is <code class="highlighter-rouge">12.042</code> which is greater than <code class="highlighter-rouge">12</code> as was our aim.Although our aim is achieved but there are problems:</p>
+
+<ul>
+  <li>This is a good strategy for small problems with few nodes but with millions of inputs and thousands of nodes which is easily possible in modern day networks this strategy of exhaustive search would be too time consuming.</li>
+  <li>
+    <p>This is an unreliable method to increase value of the function.When we randomly increase the values of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code>,it might result in decrease in value of function.Have a look at the code below:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  
+def product(a,b):
+	return a*b
+a=-4
+b=-3
+h=0.01
+a=a+h*(random.random())
+b=b+h*(random.random())
+print(product(a,b))
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>The above code produces output <code class="highlighter-rouge">11.94</code> which is less than <code class="highlighter-rouge">12</code>.The only difference was in initial values of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code>.Thus randomly increasing the values of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code> won’t suffice our aim.</p>
+
+<p>Thus we can conclude that:
+* We need more control over increasing the values of input.Essentially it means that there should be more controlled coefficient of <code class="highlighter-rouge">h</code>.
+* The coefficient of <code class="highlighter-rouge">h</code> should be function of input or inputs as changing the initial values of input changed the behaviour of output.</p>
+
+<h4 id="method2-">Method#2-</h4>
+<p>This control that we desire in the coefficient of <code class="highlighter-rouge">h</code> is given by derivative.Derivative of a function with respect to a variable is a pretty easy and straightforward concept.Let us understand by modifying our <em>default case</em>-</p>
+
+<p>Let us increase the value of <code class="highlighter-rouge">a</code> by a small quantity <code class="highlighter-rouge">h</code>(same as in method 1) and let us give a name to our product function say f(a,b).Thus:</p>
+
+<div class="highlighter-rouge">
+$$\Large{f}({a},{b})={a}*{b}$$
+</div>
+
+<p><img src="https://github.com/jasdeep06/towards-backpropagation/blob/master/images/14843170528293.png?raw=true" alt="FIG Modified" /></p>
+
+<p>The new output can be calculated easily as <code class="highlighter-rouge">(a+h)*b</code> which can be expanded as <code class="highlighter-rouge">a*b+h*b</code>.Thus the output increases by a value of <code class="highlighter-rouge">h*b</code> as compared to <em>default case</em>.We can say that with increase of <code class="highlighter-rouge">h</code> in <code class="highlighter-rouge">a</code> the output increases by <code class="highlighter-rouge">h*b</code>,thus with a unit increase in <code class="highlighter-rouge">a</code> the output would have increased by <code class="highlighter-rouge">b</code>.This normalised effect of increase in value of one of the input on output is expressed as derivative of output with respect to that input.Note that when we take out derivative of function with respect to a variable then all other variables are kept constant. 
+The mathematical interpretation of the derivative of function <code class="highlighter-rouge">f</code> with respect to <code class="highlighter-rouge">a</code> is defined as-</p>
+
+<div class="highlighter-rouge">
+$$\Large\frac{\partial f}{\partial a}=\frac{{f}(({a}+{h}),{b})-{f}({a},{b})}{h}$$<br>
+ The above formula is nothing but mathematical interpretation of definition of derivative as mentioned above.(For those familiar with multivariate calculus,this is the partial derivative of `f` with respect to `a`) 
+
+</div>
+
+<p>Similarly,the derivative of function <code class="highlighter-rouge">f</code> with respect to <code class="highlighter-rouge">b</code> can be found by increasing <code class="highlighter-rouge">b</code> by a small quantity <code class="highlighter-rouge">h</code> and normalising the difference between the final output(<code class="highlighter-rouge">a*b+a*h</code>) and initial output(<code class="highlighter-rouge">a*b</code>) that gives us <code class="highlighter-rouge">a</code>.</p>
+
+<p>This is the numeric method of finding gradients.It has a significant drawback.Although it is less error prone but it takes lot of time to calculate derivatives this way.Time to introduce a new method of finding derivatives:Analytical method.</p>
+
+<p>Method#3 Analytical gradient method:In order to calculate gradient using analytical gradient method we need to remember few basic rules of calculus.These rules are derived from the numerical gradient method and are committed to memory so that they can be used directly.This saves us the computation time and space required for calculating derivatives.For <code class="highlighter-rouge">f=a*b</code>,the following can be directly stated-</p>
+
+<div class="highlighter-rouge">$$\Large\frac{\partial f}{\partial a}={b}$$ <br>  This can easily be derived from the mathematical interpretation of derivative as stated above.Putting values in interpretation-<br>
+			       
+                   $$\Large\frac{\partial f}{\partial a}=\frac{({a}+{h})*{b}-{a}*{b}}{h}$$
+		$$\Large\frac{\partial f}{\partial a}=\frac{({a}*{b}+{h}*{b})-{a}*{b}}{h}$$
+		$$\Large\frac{\partial f}{\partial a}={b}$$			                  
+Similarly one can derive:<br> $$\Large\frac{\partial f}{\partial b}={a}$$ With these two derivatives in hand we have our coefficients of h in a-update and b-update.So our modified update rules will be-<br>
+
+			$$\Large{a}={a}+{h}*\frac{\partial f}{\partial a}={a}+{h}*{b}$$
+			$$\Large{b}={b}+{h}*\frac{\partial f}{\partial b}={b}+{h}*{a}$$ 
+The modified code will be:<br>
+</div>
+<div class="highlighter-rouge"><code>
+<pre>
+def product(a,b):
+	return a*b
+a=-4
+b=-3
+h=0.01
+a=a+h*b
+b=b+h*a
+print(product(a,b))
+</code></pre>
+</div>
+
+<p>The output of above code is 12.252 which is greater than 12 as was our aim.</p>
+
+<h3 id="why-does-this-approach-work">Why does this approach work?</h3>
+
+<p>To appreciate the beauty of derivative in updates of inputs <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code> we have to dive into geometrical interpretation of derivative.Geometrically,derivative of a function with respect to a variable tells us the rate at which that function changes with respect to that variable.While reading ahead keep in mind those update rules given by-</p>
+
+<div class="highlighter-rouge">
+$$\Large{a}={a}+{h}*\frac{\partial f}{\partial a}$$
+$$\Large{b}={b}+{h}*\frac{\partial f}{\partial b}$$
+<blockquote>
+  <p><em>Derivative of a function with respect to a variable tells us the rate at which that function changes with respect to that variable keeping all other variables constant.</em></p>
+</blockquote>
+ 
+</div>
+
+<p>Let us understand the effect of derivative in update rules in a single-variable system to get an intuition of what is happenning-</p>
+
+<p><img src="https://github.com/jasdeep06/towards-backpropagation/blob/master/images/1484328058832.png?raw=true" alt="Derivative" /></p>
+
+<p>Above figure represents a function in single variable <code class="highlighter-rouge">x</code>.As <code class="highlighter-rouge">x</code> increases(from left to right) the function increases till point A and then decreases as we furthur increase <code class="highlighter-rouge">x</code>.Let us imagine two cases-</p>
+
+<h4 id="case1">Case#1</h4>
+<p>Imagine we are at point A as shown in figure and we want to change the value of <code class="highlighter-rouge">x</code> in such a way that the value of funcion increases.From the figure it is clear that if we increase the value of <code class="highlighter-rouge">x</code>,the value of function increases.Now let us take a look at our update rule and see how it comes to this conclusion-</p>
+
+<div class="highlighter-rouge"> 
+$$\Large{x}={x}+{h}*\frac{dy}{dx}$$
+
+</div>
+
+<p>We know that our <code class="highlighter-rouge">h&gt;0</code> so whether <code class="highlighter-rouge">x</code> increases or decreases depends upon derivative of function with respect to <code class="highlighter-rouge">x</code>.Recall that derivative is nothing but the rate of change of function.At point A we can see that the function increases as <code class="highlighter-rouge">x</code> increases so the rate of change of function with respect to <code class="highlighter-rouge">x</code> at A is positive.This means that at point A the derivative of function with respect to <code class="highlighter-rouge">x</code> is positive.A positive derivative will make <code class="highlighter-rouge">x</code> increase through the update rule.</p>
+
+<h4 id="case2">Case#2</h4>
+<p>Imagine that we are at point C as shown in figure.Everything remains same as case#1 but now we can see from figure that the value of function increases with decrease in value of <code class="highlighter-rouge">x</code>.At this time the derivative of funcion with respect to <code class="highlighter-rouge">x</code> will be <strong>negative</strong> as value of function decreases as <code class="highlighter-rouge">x</code> increases(i.e. the rate of change of function with <code class="highlighter-rouge">x</code> is negative).When we put a negative derivative in our update rule the value of <code class="highlighter-rouge">x</code> decreases as expected.</p>
+
+<blockquote>
+  <p><em>Thus the derivative captures the nature of our function and gives our update rule a sense of direction to obtain a higher value.</em></p>
+</blockquote>
+
+<p>I will stop this post here.I hope that this post helped you develop an intuition about derivatives and their involvement in update rule.In the next post we will apply these principals in nested nodes and will finally see backpropagation.</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">Backpropagation maintained by <a href="https://github.com/jasdeep06">jasdeep06</a></p>
+        
+      </footer>
+    </div>
+
+
+
+  </body>
+</html>
