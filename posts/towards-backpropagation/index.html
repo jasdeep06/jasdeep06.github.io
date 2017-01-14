@@ -95,7 +95,7 @@ print(product(a,b))
 * We need more control over increasing the values of input.Essentially it means that there should be more controlled coefficient of <code class="highlighter-rouge">h</code>.
 * The coefficient of <code class="highlighter-rouge">h</code> should be function of input or inputs as changing the initial values of input changed the behaviour of output.</p>
 
-<h4 id="method2-">Method#2-</h4>
+<h4 id="method2-">Method#2</h4>
 <p>This control that we desire in the coefficient of <code class="highlighter-rouge">h</code> is given by derivative.Derivative of a function with respect to a variable is a pretty easy and straightforward concept.Let us understand by modifying our <em>default case</em>-</p>
 
 <p>Let us increase the value of <code class="highlighter-rouge">a</code> by a small quantity <code class="highlighter-rouge">h</code>(same as in method 1) and let us give a name to our product function say f(a,b).Thus:</p>
@@ -118,8 +118,8 @@ $$\Large\frac{\partial f}{\partial a}=\frac{{f}(({a}+{h}),{b})-{f}({a},{b})}{h}$
 <p>Similarly,the derivative of function <code class="highlighter-rouge">f</code> with respect to <code class="highlighter-rouge">b</code> can be found by increasing <code class="highlighter-rouge">b</code> by a small quantity <code class="highlighter-rouge">h</code> and normalising the difference between the final output(<code class="highlighter-rouge">a*b+a*h</code>) and initial output(<code class="highlighter-rouge">a*b</code>) that gives us <code class="highlighter-rouge">a</code>.</p>
 
 <p>This is the numeric method of finding gradients.It has a significant drawback.Although it is less error prone but it takes lot of time to calculate derivatives this way.Time to introduce a new method of finding derivatives:Analytical method.</p>
-
-<p>Method#3 Analytical gradient method:In order to calculate gradient using analytical gradient method we need to remember few basic rules of calculus.These rules are derived from the numerical gradient method and are committed to memory so that they can be used directly.This saves us the computation time and space required for calculating derivatives.For <code class="highlighter-rouge">f=a*b</code>,the following can be directly stated-</p>
+	      <h4 id="method3">Method#3</h4>
+<p>Analytical gradient method:In order to calculate gradient using analytical gradient method we need to remember few basic rules of calculus(Refer <a href="https://www.mathsisfun.com/calculus/derivatives-rules.html">Derivative-rules</a>).These rules are derived from the numerical gradient method and are committed to memory so that they can be used directly.This saves us the computation time and space required for calculating derivatives.For <code class="highlighter-rouge">f=a*b</code>,the following can be directly stated-</p>
 
 <div class="highlighter-rouge">$$\Large\frac{\partial f}{\partial a}={b}$$ <br>  This can easily be derived from the mathematical interpretation of derivative as stated above.Putting values in interpretation-<br>
 			       
