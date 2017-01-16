@@ -183,10 +183,11 @@ $$\Large{x}={x}+{h}*\frac{dy}{dx}$$
   <p><em>Thus the derivative captures the nature of our function and gives our update rule a sense of direction to obtain a higher value.</em></p>
 </blockquote>
 
-<p>I will stop this post here.I hope that this post helped you develop an intuition about derivatives and their involvement in update rule.In the next post we will apply these principals in nested nodes and will finally see backpropagation.</p>
 	      <h4 id="case3">Case#3</h4>
 	     
-	      <p>Imagine that we are somewhere pretty close to point B(say we are on the left of it but pretty close to it).The value of derivative will be positive and the update rule would want to increase the value of <code class="highlighter-rouge">x</code>in order to increase the value of the function.But a condition could arise when value of  <code class="highlighter-rouge">h</code> (stepsize) si sufficiently large that it overshoots the point B and thus value of function would decrease.Then we would have to adjust value of our stepsize(make it small of course!) in order to increase value of our function.Thus this approach of increasing value of inputs in direction of derivative would give us desired result for almost all functions you would encounter.(It fails for some poorly defined convex functions, but for now you do not need to worry about them.) </p>
+	      <p>Imagine that we are somewhere pretty close to point B(say we are on the left of it but pretty close to it).The value of derivative will be positive and the update rule would want to increase the value of <code class="highlighter-rouge">x</code>in order to increase the value of the function.But a condition could arise when value of  <code class="highlighter-rouge">h</code> (stepsize) is sufficiently large that it overshoots the point B and thus decreasing the value of our function.Then we would have to adjust value of our stepsize(make it small of course!) in order to increase value of our function.Thus this approach of increasing value of inputs in direction of derivative would give us desired result for almost all functions you would encounter.(It fails for some poorly defined convex functions, but for now you do not need to worry about them.) </p>
+	      
+	      <p>I will stop this post here.I hope that this post helped you develop an intuition about derivatives and their involvement in update rule.In the next post we will apply these principals in nested nodes and will finally see backpropagation.</p>
       </section>
     </div>
 
