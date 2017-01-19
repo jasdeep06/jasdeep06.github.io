@@ -158,12 +158,12 @@ h=.01
 y=np.dot(X,W)
 y_o=sigmoid(y)
 #loss calculation
-loss=-np.sum(np.log(y_o[range(1),ycap]))
+loss=-np.sum(np.log(y_o[range(num_examples),ycap]))
 print(loss)     #outputs 7.87 (for you it would be different due to random initialization of weights.)
 #backprop starts
 temp1=np.copy(y_o)
 #implementation of derivative of cost function with respect to y_o
-temp1[range(num_examples),ycap]=1/-(temp1[range(1),ycap])
+temp1[range(num_examples),ycap]=1/-(temp1[range(num_examples),ycap])
 temp=np.zeros_like(y_o)
 temp[range(num_examples),ycap]=1
 #derivative of cost with respect to y_o
@@ -178,7 +178,7 @@ W-=h*dw
 #forward prop again with updated weight to find new loss
 y=np.dot(X,W)
 yo=sigmoid(y)
-loss=-np.sum(np.log(yo[range(1),ycap]))
+loss=-np.sum(np.log(yo[range(num_examples),ycap]))
 print(loss)     #outpus 7.63 (again for you it would be different!)
 </code></pre>
 </div>
