@@ -77,7 +77,7 @@ Our aim would be to adjust the values of weights such that our cost function is 
 $$\Large{X}=\begin{bmatrix}x_1 &amp; x_2&amp; x_3\end{bmatrix}$$
 The weights can also be represented in form of a 3x2 matrix as $$\Large{W}=\begin{bmatrix}W_{11} &amp; W_{12} \\W_{21} &amp; W_{22}\\W_{31} &amp; W_{32}\end{bmatrix}$$
 The output before application of sigmoid can easily be found out by multiplying the two matrix to generate a 1x2 output matrix:
-$$\Large\begin{bmatrix}x_1 &amp; x_2&amp; x_3\end{bmatrix}*\begin{bmatrix}W_{11} &amp; W_{12} \\W_{21} &amp; W_{22}\\W_{31} &amp; W_{32}\end{bmatrix}=\begin{bmatrix}x_1W_{11}+x_2W_{21}+x_3W_{31} &amp; x_1W_{12}+x_2W_{22}+x_3W_{32}\end{bmatrix}$$</p>
+$$\begin{bmatrix}x_1 &amp; x_2&amp; x_3\end{bmatrix}*\begin{bmatrix}W_{11} &amp; W_{12} \\W_{21} &amp; W_{22}\\W_{31} &amp; W_{32}\end{bmatrix}=\begin{bmatrix}x_1W_{11}+x_2W_{21}+x_3W_{31} &amp; x_1W_{12}+x_2W_{22}+x_3W_{32}\end{bmatrix}$$</p>
 
 <p>Note that the output matrix is a 1x2 matrix with two elements of which one belongs to the first node and other to the second node (of the pre sigmoidal output layer)for a single training example.Let this matrix be represented as:
 $$\Large{y}=\begin{bmatrix}x_1W_{11}+x_2W_{21}+x_3W_{31} &amp; x_1W_{12}+x_2W_{22}+x_3W_{32}\end{bmatrix}\equiv{\begin{bmatrix}y_1&amp;y_2\end{bmatrix}}$$ where \(\Large{y_1},{y_2},{y}\) are placeholders to facilitate understanding.</p>
