@@ -25,6 +25,8 @@
   ga('send', 'pageview');
 
 </script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
   </head>
 
 <body style="font-family: 'Source Sans Pro', sans-serif;font-size:19px">
@@ -150,13 +152,13 @@ Observe the above matrix.It is nothing but the combination $$\Large{X^T}\times(\
 Now we can put this expression in our update rule:
  $$\Large{W}=W-h\ast{X^T}\times(\frac{\partial C}{\partial y_{o}}\odot\frac{\partial y_o}{\partial y})$$The python representation can be given as:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>import numpy as np
+<div><pre class="prettyprint"><code>import numpy as np
 import random
 
 def sigmoid(x):
-return 1/(1+np.exp(-x))
+	return 1/(1+np.exp(-x))
 def derivative_sigmoid(x):
-return np.multiply(sigmoid(x),(1-sigmoid(x)))
+	return np.multiply(sigmoid(x),(1-sigmoid(x)))
 
 #initialization
 X=np.matrix("2,4,-2")
@@ -196,7 +198,7 @@ print(loss)     #outpus 7.63 (again for you it would be different!)
 </code></pre>
 </div>
 
-<p>Our cost function decreases from 7.87 to 7.63 after one iteration of backpropagation.Above program shows only one iteration of backpropagation and can be extended to multiple iterations to minimize the cost function.All the above matrix representations are valid for multiple inputs too.With increase in number of inputs,number of rows in inout matrix would increase. </p>
+<p>Our cost function decreases from 7.87 to 7.63 after one iteration of backpropagation.Above program shows only one iteration of backpropagation and can be extended to multiple iterations to minimize the cost function.All the above matrix representations are valid for multiple inputs too.With increase in number of inputs,number of rows in input matrix would increase. </p>
 
 <p>My aim for writing this post was to enable you to apply backpropagation to neural networks.Also I wanted you to see the transition between dealing with variables and dealing with matrices.Enough for this time!Enjoy!</p>
 
