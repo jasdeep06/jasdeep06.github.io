@@ -25,6 +25,8 @@
   ga('send', 'pageview');
 
 </script>
+	  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
   </head>
 
 <body style="font-family: 'Source Sans Pro', sans-serif;font-size:20px">
@@ -54,7 +56,7 @@
 
 <p>This system can be represented as:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>import numpy as np
+<div><pre class="prettyprint"><code>import numpy as np
 def sigmoid(x):
 	return 1/(1+np.exp(-x))
 a=-2
@@ -88,7 +90,7 @@ $$\Large{a}={a}+h*(\sigma({a}))*(1-\sigma({a}))$$</p>
 
 <p>Using this update rule in python:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>import numpy as np
+<div><pre class="prettyprint"><code>import numpy as np
 def sigmoid(x):
 	return 1/(1+np.exp(-x))
 def derivative_sigmoid(x):
@@ -107,7 +109,7 @@ print(f)  #outputs 0.1203
 <img src="https://github.com/jasdeep06/jasdeep06.github.io/blob/master/posts/Lets-practice-backpropagation/images/nested-sigmoid.png?raw=true" alt="nested-sigmoid" />
 The system consists of three inputs <code class="highlighter-rouge">a</code>,<code class="highlighter-rouge">b</code> and <code class="highlighter-rouge">c</code>.The former two pass through an addition node and give output <code class="highlighter-rouge">d</code> which products with the input<code class="highlighter-rouge">c</code> to generate <code class="highlighter-rouge">d</code> which is passed thwough sigmoid node to give final output <code class="highlighter-rouge">f</code>.Let us represent this system in python:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>import numpy as np
+<div><pre class="prettyprint"><code>import numpy as np
 def addition(x,y):
 	return x+y
 def product(x,y):
@@ -154,16 +156,15 @@ $$\Large\frac{\partial f}{\partial c}=(\sigma({e}))*(1-\sigma({e}))*{d}$$</p>
 <p>Let us represent this in python:</p>
 
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-import numpy as np
-  def addition(x,y):
-      return x+y
-  def product(x,y):
-      return x*y
-  def sigmoid(x):
-      return 1/(1+np.exp(-x))
-  def derivative_sigmoid(x):
-      return sigmoid(x)*(1-sigmoid(x))
+<div ><pre class="prettyprint"><code>import numpy as np
+def addition(x,y):
+	return x+y
+def product(x,y):
+	return x*y
+def sigmoid(x):
+	return 1/(1+np.exp(-x))
+def derivative_sigmoid(x):
+	return sigmoid(x)*(1-sigmoid(x))
 #initialization
 a=1
 b=-2
