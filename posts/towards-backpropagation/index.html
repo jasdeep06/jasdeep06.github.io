@@ -68,7 +68,7 @@ So enough of motivation!Bottom line is that “You should understand backpropaga
 <h4 id="method1">Method#1</h4>
 <p>The first method is the most obvious one.Let us randomly increase the values of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code> by a small quantity <code class="highlighter-rouge">h</code> times a random number:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    
+<div><pre class="prettyprint"><code>    
 def product(a,b):
 	return a*b
 a=4
@@ -87,7 +87,7 @@ print(product(a,b))
   <li>
     <p>This is an unreliable method to increase value of the function.When we randomly increase the values of <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code>,it might result in decrease in value of function.Have a look at the code below:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>  
+    <div><pre class="prettyprint"><code>  
 def product(a,b):
 	return a*b
 a=-4
@@ -145,8 +145,8 @@ Similarly one can derive:<br> $$\Large\frac{\partial f}{\partial b}={a}$$ With t
 			$$\Large{b}={b}+{h}*\frac{\partial f}{\partial b}={b}+{h}*{a}$$ 
 The modified code will be:<br>
 </div>
-<div class="highlighter-rouge"><code>
-<pre>
+<div><pre class="prettyprint">
+<code>
 def product(a,b):
 	return a*b
 a=-4
