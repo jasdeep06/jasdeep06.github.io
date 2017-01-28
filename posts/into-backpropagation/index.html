@@ -30,7 +30,9 @@ MathJax.Hub.Config({
   ga('create', 'UA-90643331-1', 'auto');
   ga('send', 'pageview');
 
-</script>	  
+</script>
+	  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
   </head>
 
 <body style="font-family: 'Source Sans Pro', sans-serif;font-size:20px">
@@ -66,10 +68,10 @@ $$\Large{f}={f}({a},{b})$$</p>
 <p>Here there are two nodes,out of which the first one(from the left) accepts two inputs <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code> and performs addition operation on them to return the output <code class="highlighter-rouge">d</code>.The second node accepts <code class="highlighter-rouge">d</code> and a new input <code class="highlighter-rouge">c</code> as inputs and performs product operation on them to gives <code class="highlighter-rouge">f</code> as final output.
 This system can be represented in python:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>def product(x,y):
-  return x*y
+<div><pre class="prettyprint"><code>def product(x,y):
+	return x*y
 def addition(x,y):
-  return x+y
+	return x+y
 
 a=5
 b=-3
@@ -133,10 +135,10 @@ $$\Large{c}={c}+{h}*\frac{\partial f}{\partial c}={c}+{h}*{d}$$</p>
 
 <p>Now that we have our update rules we can express this in python:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>def product(x,y):
-  return x*y
+<div><pre class="prettyprint"><code>def product(x,y):
+	return x*y
 def addition(x,y):
-  return x+y
+	return x+y
 a=5
 b=-3
 c=-2
