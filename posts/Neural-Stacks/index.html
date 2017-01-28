@@ -29,6 +29,8 @@ MathJax.Hub.Config({
   ga('create', 'UA-90643331-1', 'auto');
   ga('send', 'pageview');
 </script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
   </head>
 
   <body style="font-family: 'Source Sans Pro', sans-serif;font-size:20px"
@@ -107,8 +109,7 @@ Have a look at figures below to clarify notations and pop operation:The first fi
 
 <p>This process of modification of strength vector can be represented in python as:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-#initializing strength dictionary
+<div><pre class="prettyprint"><code>#initializing strength dictionary
 strength={}
 def strength_time(time,push_certainity,pop_certainity):
 
@@ -121,6 +122,7 @@ def strength_time(time,push_certainity,pop_certainity):
             pop_certainity = 0
             break
     strength[time] = push_certainity
+    
 </code></pre>
 </div>
 
@@ -133,8 +135,7 @@ Have a look at figure below to make things clearer:
 
 <p>Implementing this in python we get:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-def read_time(time):
+<div><pre class="prettyprint"><code>def read_time(time):
     #returns read vector at time 'time'
     #initial read value of 1
     read=1
@@ -162,7 +163,7 @@ def read_time(time):
 <p>Checking our implementation:
 Below code is consistent with our read figure.Four vectors are pushed into our value matrix with the help of pushPop function.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div><pre class="prettyprint"><code>
 import numpy as np
 import copy
 Value={}
@@ -206,7 +207,7 @@ def read_time(time):
 def strength_time(time,push_certainity,pop_certainity):
 
     for var in reversed(range(time)):
-        if strength[var]< pop_certainity:
+        if strength[var] < pop_certainity:
             pop_certainity-=strength[var]
             strength[var] = 0
         else:
