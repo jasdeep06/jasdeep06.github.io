@@ -9,7 +9,9 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="https://jasdeep06.github.io/test-page/assets/css/style.css?v=19e46c13439690f15992f12ef0a6345273f77dfd">
 
-    <title>Getting-started-with-Tensorflow</title>
+
+
+    <title>test-page</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
     <script>
@@ -20,6 +22,8 @@
   ga('create', 'UA-90643331-1', 'auto');
   ga('send', 'pageview');
 </script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
   </head>
 
 <body style="font-family: 'Source Sans Pro', sans-serif;font-size:19px">
@@ -49,7 +53,7 @@
 <p>When we come across the name “Tensorflow”,the first thing that invariably comes to mind is the word “tensor”.Why “tensor”flow?What is a “tensor”?Well,not dwelling too much on its mathematical representation,consider tensor as a multidimensional array of numbers.Thus all scalars,vectors,matrices fall under the category of tensors.
 Let us try to add two tensors in tensorflow-</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#import tensorflow
+<div ><pre class="prettyprint"><code>#import tensorflow
 import tensorflow as tf
 #declare constants
 a=tf.constant(2,name="a")
@@ -60,7 +64,7 @@ c=tf.add(a,b,name="c")
 
 <p>In above program the function <code class="highlighter-rouge">tf.constant(value)</code> is used to declare a constant of value <code class="highlighter-rouge">value</code>  and <code class="highlighter-rouge">tf.add(a,b)</code> is used to add two tensors <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">b</code>. Let us now try to print the value of <code class="highlighter-rouge">c</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#import tensorflow
+<div><pre class="prettyprint"><code>#import tensorflow
 import tensorflow as tf
 #declare constants
 a=tf.constant(2,name="a")
@@ -72,7 +76,7 @@ print(c)
 
 <p>Output-</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Tensor("Add:0", shape=(), dtype=int32)
+<div ><pre class="prettyprint"><code>Tensor("Add:0", shape=(), dtype=int32)
 </code></pre>
 </div>
 
@@ -88,7 +92,7 @@ One of the important aspect of computation graph is that it does not has any num
 
 <p>In order to run a computation graph in tensorflow,a context is required.This context is encapsulated by a <strong>Session</strong> object.To clarify this concept,have a look at the code below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#import tensorflow
+<div ><pre class="prettyprint"><code>#import tensorflow
 import tensorflow as tf
 #declare constants
 a=tf.constant(2,name="a")
@@ -103,14 +107,14 @@ with tf.Session() as sess:
 
 <p>Output-</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>5
+<div ><pre class="prettyprint"><code>5
 </code></pre>
 </div>
 
 <p>A Session object is created by the method <code class="highlighter-rouge">tf.Session()</code>.The computation <code class="highlighter-rouge">c</code> in our computation graph would run in this session by calling the <code class="highlighter-rouge">sess.run(c)</code> method.The addition computation runs in our Session <code class="highlighter-rouge">sess</code> and yields a value of <code class="highlighter-rouge">5</code>.
 To avoid of passing the computation from the run method of our session object,tensorflow has concept of <strong>Interactive Session</strong>.Once an InteractiveSession object is created,a computation can be evaluated by calling the <code class="highlighter-rouge">eval()</code> method on it(instead of previously passing the computation from <code class="highlighter-rouge">run</code> method of Session object).This comes in handy when dealing with Ipython notebooks and other interactive environments.Have a look at the implementation below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#import tensorflow
+<div ><pre class="prettyprint"><code>#import tensorflow
 import tensorflow as tf
 #declare constants
 a=tf.constant(2,name="a")
@@ -125,7 +129,7 @@ print(c.eval())
 
 <p>Output-</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>5
+<div ><pre class="prettyprint"><code>5
 </code></pre>
 </div>
 
@@ -139,7 +143,7 @@ TensorFlow also does its heavy lifting outside Python, but it takes things a ste
 Any machine learning problem will inevitably involve some parameters that would need to be updated in order to optimize a function.These updatable parameters will be expressed in form of tensorflow variables.
 One basic difference between constant tensors and variable tensors is that the variable tensors need to be initialized explicitly unlike constant tensors.Have a look at the implementation below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#import tensorflow
+<div><pre class="prettyprint"><code>#import tensorflow
 import tensorflow as tf
 #add a constant tensor to our graph
 W1=tf.ones((2,2))
@@ -158,7 +162,7 @@ with tf.Session() as sess:
 
 <p>Output-</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[[ 1.  1.]
+<div><pre class="prettyprint"><code>[[ 1.  1.]
  [ 1.  1.]]
 [[ 0.  0.]
  [ 0.  0.]]
@@ -171,7 +175,7 @@ with tf.Session() as sess:
 <p>Till now we have seen simple variable tensors and constant tensors in tensorflow.A class of operations called placeholder also exists to facilitate the input of data to the our computation graph.They act as dummy nodes that provide entry points for data to our graph.
 It is important to note that placeholder ops should be provided data at the time of execution of our computation graph.This task is accomplished with the help of feed dictionaries.Thus feed dictionaries act as an intermediate between our data and placeholder ops.On the other hand the placeholder ops transfer the data that they receive from feed dictionaries at the time of execution to our computation graph.To get the idea of syntax,have a look at the code below:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#import tensorflow
+<div ><pre class="prettyprint"><code>#import tensorflow
 import tensorflow as tf
 #add a placeholder to our graph
 input1=tf.placeholder(tf.float32)
@@ -188,7 +192,7 @@ with tf.Session() as sess:
 
 <p>Output-</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[ 5.]
+<div ><pre class="prettyprint"><code>[ 5.]
 </code></pre>
 </div>
 
@@ -203,7 +207,7 @@ with tf.Session() as sess:
 
 <p>First things first,we need a dataset to implement regression on.Let us generate some random data as-</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#importing tensorflow
+<div ><pre class="prettyprint"><code>#importing tensorflow
 import tensorflow as tf
 #importing numpy
 import numpy as np
@@ -225,7 +229,7 @@ plt.show()
 <p>Our task is to fit a best possible straight line through this dataset.
 Now that we have our input data,we need to process it so that we can transfer it to our model.We have 1000 data-points of both <code class="highlighter-rouge">X_data</code> and <code class="highlighter-rouge">Y_data</code>. Let us convert this data in form of 1000X1 tensors as-</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#total data points
+<div ><pre class="prettyprint"><code>#total data points
 n_samples=1000
 #X_data in form of 1000X1 tensor
 X_data=np.reshape(X_data,(n_samples,1))
@@ -236,7 +240,7 @@ Y_data=np.reshape(Y_data,(n_samples,1))
 
 <p>Now that we have our data processed,we need to declare placeholders which would act as entry point of data to our computation graph.Here we will not transfer all of our 1000 datapoints at once to our computation graph.Rather we will do this in batches of size 100.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#batch size
+<div><pre class="prettyprint"><code>#batch size
 batch_size=100
 #placeholder for X_data
 X=tf.placeholder(tf.float32,shape=(batch_size,1))
@@ -247,7 +251,7 @@ Y=tf.placeholder(tf.float32,shape=(batch_size,1))
 
 <p>We have our placeholders ready.As we want to fit our data in a straight line,we need to dwell upon the variables that would be learnt in order to accomplish this task.We need to create a weight variable and a bias variable to generate predictions from our input data X.These predictions will be modified by updating weight and bias variables.Our aim would be to get our predictions as close as possible to <code class="highlighter-rouge">Y</code>.This effect would be captured by minimizing our root mean square error loss function.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#defining weight variable
+<div ><pre class="prettyprint"><code>#defining weight variable
 W=tf.Variable(tf.random_normal((1,1)),name="weights")
 #defining bias variable
 b=tf.Variable(tf.random_normal((1,)),name="bias")
@@ -260,7 +264,7 @@ loss=tf.reduce_sum(((Y-y_pred)**2)/n_samples)
 
 <p>To get the minimum value of this loss function we need to vary the values of weights and bias.This minimization is achieved using gradient-descent(refer <a href="https://jasdeep06.github.io/posts/towards-backpropagation/">here</a>) which is implemented directly in tensorflow as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#defining optimizer
+<div ><pre class="prettyprint"><code>#defining optimizer
 opt_operation=tf.trainAdamOptimizer().minimize(loss)
 #creating a session object
 with tf.Session() as sess:
@@ -268,11 +272,11 @@ with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
     #gradient descent loop for 500 steps
     for iteration in range(500):
-	    #selecting batches randomly
-	    indices=np.random.choice(n_samples,batch_size)
-	    X_batch,Y_batch=X_data[indices],Y_data[indices]
-	    #running gradient descent step
-	    _,loss_value=sess.run([opt_operation,loss],feed_dict={X:X_batch,y:Y_batch})
+      #selecting batches randomly
+      indices=np.random.choice(n_samples,batch_size)
+      X_batch,Y_batch=X_data[indices],Y_data[indices]
+      #running gradient descent step
+      _,loss_value=sess.run([opt_operation,loss],feed_dict={X:X_batch,y:Y_batch})
 </code></pre>
 </div>
 
@@ -282,7 +286,7 @@ When we plot the straight line generated along with our initial dataset we see t
 <p><img src="https://github.com/jasdeep06/jasdeep06.github.io/blob/master/posts/getting-started-with-tensorflow/images/graph2.png?raw=true" alt="graph2" />
 Thus we can see that we have obtained a pretty good linear fit to our curve.For the sake of completeness here is the full code:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>import tensorflow as tf
+<div ><pre class="prettyprint"><code>import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 #generating data
@@ -367,3 +371,4 @@ with tf.Session() as sess:
 
   </body>
 </html>
+
