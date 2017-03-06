@@ -56,14 +56,15 @@ As we will mostly deal with applying CNNs on images,we will start by looking int
 <p><img src="https://github.com/jasdeep06/jasdeep06.github.io/blob/master/posts/basics-of-cnns/images/pixel_modi.png/?raw=true" alt="pixel" />
 </p>
 
-<p>To further clarify this representation,let us look at concept of resolution.When we state that an image has resolution (2048X1536) we necessarily mean that it has 2048 pixels in width and 1536 pixels in height and thus has total of 2048X1536=3,145,728 pixels or 3.1 megapixels.
+<p>To further clarify this representation,let us look at concept of resolution.When we state that an image has resolution (2048X1536) we necessarily mean that it has 2048 pixels in width and 1536 pixels in height and thus has total of 2048X1536=3,145,7
+  pixels or 3.1 megapixels.
 So a 2X2 image will be made up of 4 pixels which can be visualized as:</p>
 
 <p><img src="https://github.com/jasdeep06/jasdeep06.github.io/blob/master/posts/basics-of-cnns/images/2X2modi.png?raw=true" alt="2x2" /> </p>
 
 <p>The content of these pixels depend upon the kind of image that we are dealing with.Here we will talk about the most common type of image i.e. RGB image.RGB stands for Red,Green and Blue that constitute the primary colours.</p>
 
-<p>In a RGB image,each pixel consists of three channels one each for red,green and blue.Our aim is to use these three colours(channels) in different amounts to generate rest of the colours which would in turn generate the image.To control the colour amount,we divide each channel into something called <em>bit depth</em>.Usually the value of <em>bit-depth</em> is 8.Each of these 8 bit consists value of 1 or 0 and thus the value of channel can range from 0 to 2<sup>8</sup>-1 i.e. from 0 to 255.The combination of values from 0 to 255 of these three channels gives the value of a pixel and thus imparts it the resulting colour.For example,the combination (64,224,208) gives the colour Turquoise:</p>
+<p>In a RGB image,each pixel consists of three channels one each for red,green and blue.Our aim is to use these three colours(channels) in different amounts to generate rest of the colours which would in turn generate the image.To control the colour amount,we divide each channel into something called <em>bit depth</em>.Usually the value of <em>bit-depth</em> is 8.Each of these 8 bit consists value of 1 or 0 and thus the value of channel can range from 0 to 2^8-1 i.e. from 0 to 255.The combination of values from 0 to 255 of these three channels gives the value of a pixel and thus imparts it the resulting colour.For example,the combination (64,224,208) gives the colour Turquoise:</p>
 
 <p><img src="https://github.com/jasdeep06/jasdeep06.github.io/blob/master/posts/basics-of-cnns/images/pixel_graph.png?raw=true" alt="pixel_chart" /></p>
 
