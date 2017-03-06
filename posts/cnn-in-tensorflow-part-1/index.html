@@ -65,7 +65,7 @@ Before taking a look at reshaping and slicing operations in tensorflow,it would 
 
 <p>Let us traverse the above tensor from left to right.As we encounter three  consecutive opening brackets,we reach the second dimension which contains four elements 11,12,13 and 14.As we move further right,we encounter two closing braces which takes us back to zeroth dimension.Thus <code class="highlighter-rouge">[[11 12 13 14]]</code> was the zeroth element in our zeroth dimension.Similarly first element in the zeroth dimension would be <code class="highlighter-rouge">[[15 16 17 18]]</code>.
 Let us try to visualise the allotment of indices to these tensor elements:
-<img src="https://github.com/jasdeep06/jasdeep06.github.io/blob/master/posts/cnn-in-tensorflow/images/tensor_vis.png?raw=true" alt="tensor_visual" />
+<img src="https://github.com/jasdeep06/jasdeep06.github.io/blob/master/posts/cnn-in-tensorflow-part-1/images/tensor_vis%20.png?raw=true" alt="tensor_visual" />
 Above figure is pretty self-explanatory.To get comfortable with indices let us write some code to access elements of above tensor <code class="highlighter-rouge">T</code>.While you analyse the output of code,compare them with above figure to make yourself see how elements of tensors are accessed.</p>
 
 <div><pre class="prettyprint"><code>import tensorflow as tf
@@ -196,7 +196,7 @@ The value of tf.slice(T,[0,0,0],[3,2,1]) is
 <p>As each of these images are 32X32 colour images with 3 channels Red,Green and Blue(RGB),they will have 32X32X3=3072 image bytes(32X32=1024 for each R,G,B).Also each image is associated with a label(denoting its class) which occupies 1 byte.Thus each image will be defined by 3072(image)+1(label)=3073 bytes.</p>
 
 <p>As each image file contains 10000 such images so they are 30730000 bytes long.The arrangement of images in these files can be visualised as:
-<img src="https://github.com/jasdeep06/jasdeep06.github.io/blob/master/posts/cnn-in-tensorflow/images/dataset.png?raw=true" alt="dataset_visual" /></p>
+<img src="https://github.com/jasdeep06/jasdeep06.github.io/blob/master/posts/cnn-in-tensorflow-part-1/images/dataset.png?raw=true" alt="dataset_visual" /></p>
 
 <p>Each image is arranged in form of rows with first byte as the label byte followed by 1024 pixel bytes each of Red,Green and Blue channels respectively.There are 10000 such rows.The image rows are consecutive i.e. there is nothing delimiting image rows.</p>
 
