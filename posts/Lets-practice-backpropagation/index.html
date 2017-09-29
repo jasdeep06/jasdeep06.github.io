@@ -107,7 +107,7 @@ print(f)  #outputs 0.1203
 
 <p>Let us take the discussion one notch above.Consider the system:
 <img src="https://github.com/jasdeep06/jasdeep06.github.io/blob/master/posts/Lets-practice-backpropagation/images/nested-sigmoid.png?raw=true" alt="nested-sigmoid" />
-The system consists of three inputs <code class="highlighter-rouge">a</code>,<code class="highlighter-rouge">b</code> and <code class="highlighter-rouge">c</code>.The former two pass through an addition node and give output <code class="highlighter-rouge">d</code> which products with the input<code class="highlighter-rouge">c</code> to generate <code class="highlighter-rouge">d</code> which is passed thwough sigmoid node to give final output <code class="highlighter-rouge">f</code>.Let us represent this system in python:</p>
+The system consists of three inputs <code class="highlighter-rouge">a</code>,<code class="highlighter-rouge">b</code> and <code class="highlighter-rouge">c</code>.The former two pass through an addition node and give output <code class="highlighter-rouge">d</code> which products with the input<code class="highlighter-rouge">c</code> to generate <code class="highlighter-rouge">e</code> which is passed through sigmoid node to give final output <code class="highlighter-rouge">f</code>.Let us represent this system in python:</p>
 
 <div><pre class="prettyprint"><code>import numpy as np
 def addition(x,y):
