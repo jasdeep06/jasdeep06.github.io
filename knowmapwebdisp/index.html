@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KnowMap</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+<style type="text/css">
+	*{
+		font-family:  'Roboto', sans-serif;
+	}
+	.sections{
+		margin-top: 5px;
+		 padding: 6px 12px 17px 12px;
+		 text-align: justify;
+	}
+
+	.bttn{
+		color: #17acf4;
+		border-radius: 0;
+		border: 1px solid #17acf4; 
+		margin-right: 8px;
+		margin-top: 10px;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	a:hover{
+  
+  text-decoration:  none;
+
+}
+</style>
+
+</head>
+<body style="background-color: #e5e5e5;">
+
+<nav class="navbar " style="background-color:#292929; border-radius: 0; margin-bottom: 0;">
+ 	 <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="font-family: 'Pacifico', cursive; color: #fff; background-color:#393836; ">KnowMap</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" style=" color: #fff; background-color:#292929; ">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style=" cursive; color: #fff; background-color:#292929; ">@username<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<div class="container-fluid" >
+	<div class="row">
+		<div class="col-lg-1" style=" padding-left: 0; padding-right: 0; background-color: #393836; height: 100vh; width: 117px;">
+			
+			<!-- sidestbar -->
+			
+
+			<ul class="list-group" style="border-radius: 0; margin-top: 20px; ">
+				  <li class="list-group-item"  style="border-radius: 0; border: 0; border-top: 1px solid #585858; ">DASHBOARD</li>
+				  <li class="list-group-item"  style="border: 0; border-top: 1px solid #585858;">EXPLORE</li>
+				  <li class="list-group-item activez"  style="border: 0; border-top: 1px solid #585858;">KNOWBOOK</li>
+				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858;" >SHARED</li>
+				  <li class="list-group-item"  style="border: 0; border-top: 1px solid #585858;">IMPORTANT</li>
+				  
+				  <li class="list-group-item" style="border-radius: 0; border: 0; border-top: 1px solid #585858; border-bottom: 1px solid #585858;">COMMUNITY</li>
+			</ul>
+		</div>
+		
+
+		<!-- tree -->
+
+		<div class="col-lg-2" style="background-color: #292929; height: 96vh; margin-right: 19px; margin-left: 19px; margin-top: 19px; padding-left: 0; padding-right: 0;" >
+
+			<div style="background-color: #393836; height: 40px; color: #fff;     padding-top: 11px; padding-left: 17px; font-size: 15px; font-weight: 600">
+			KnowBook	
+				 
+			</div>
+			
+
+			<div  id="treeload" style="width:100%; height: 600px; overflow: scroll;  margin-top: 10px;">
+
+
+            </div>
+
+		</div>
+
+
+
+
+		<!-- content -->
+		
+		<div class="col-lg-8" style="background-color: #ffffff; height: 96vh; margin-top: 19px; padding-left: 0; padding-right: 0;" >
+			
+			<div style="background-color: #393836; height: 40px;">
+				<div class="collapse navbar-collapse navbar-ex1-collapse" >
+				<ul class="nav navbar-nav navbar-right" id='navmenu'>
+
+					<li class="bttn toolbar" ><a href="#" style="padding: 0; color: #17acf4;" data-command='bold'><i class='fa fa-bold'></i></a></li>
+
+					<li class="bttn toolbar"><a href="#" style="padding: 0; color: #17acf4;" data-command='italic'><i class='fa fa-italic'></i></a></li>
+
+					<li class="bttn toolbar"><a href="#" style="padding: 0; color: #17acf4;" data-command='underline'><i class='fa fa-underline'></i></a></li>
+
+					<li class="bttn toolbar"><a href="#" style="padding: 0; color: #17acf4;" data-command='justifyLeft'><i class='fa fa-align-left'></i></a></li>
+
+					<li class="bttn toolbar"><a href="#" style="padding: 0; color: #17acf4;" data-command='justifyCenter'><i class='fa fa-align-center'></i></a>
+					</li>
+
+
+					<li class="bttn toolbar"><a href="#" style="padding: 0; color: #17acf4;" data-command='justifyRight'><i class='fa fa-align-right'></i></a></li>
+
+					<li class="bttn toolbar"><a href="#" style="padding: 0; color: #17acf4;" data-command='insertUnorderedList'><i class='fa fa-list-ul'></i></a></li>
+
+					<li class="bttn toolbar"><a href="#" style="padding: 0; color: #17acf4;" data-command='insertOrderedList'><i class='fa fa-list-ol'></i></a></li>
+
+
+					<li class="bttn toolbar" id="save"><i class="fa fa-floppy-o" aria-hidden="true"></i></li>
+
+					<li class="bttn toolbar" id="clear"><i class="fa fa-eraser" aria-hidden="true" ></i></li>
+				</ul>
+			</div>
+
+	
+
+				
+			</div>
+			
+
+			<div  id="contentload" style="width:100%; height: 600px; overflow: scroll; ">
+
+
+            </div>
+
+		</div>
+
+
+
+		
+	</div>
+	
+</div>
+
+
+
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>

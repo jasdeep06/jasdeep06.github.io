@@ -1,0 +1,19 @@
+.list-group-item{
+	background-color: #393836;
+	color: #fff;
+		
+	
+}
+
+.activez{
+	background-color: #585858;
+	color: #fff;
+}
+
+#contentload::-webkit-scrollbar { 
+    display: none;  
+}
+
+#treeload::-webkit-scrollbar { 
+    display: none;  
+}
