@@ -6,7 +6,8 @@ var url = "https://gentle-mesa-23788.herokuapp.com/webhook";
 
 fetch(url,
 {
-	method:'post'
+	method:'post',
+  body:JSON.stringify({'head': window.location.hash.substring(1)})
 
 
 	// headers: 'Access-Control-Allow-Origin'
