@@ -4,24 +4,38 @@ var url = "https://gentle-mesa-23788.herokuapp.com/webhook";
 //     'Access-Control-Allow-Origin':'*'
 // });
 
-fetch(url,
-{
-	method:'post',
-  body:JSON.stringify({'head': window.location.hash.substring(1)})
+//fetch(url,
+//{
+//	method:'post',
+ // body:JSON.stringify({'head': window.location.hash.substring(1)})
 
 
 	// headers: 'Access-Control-Allow-Origin'
 	
+//})
+$.ajax({
+          headers: {  'Access-Control-Allow-Origin': '*'},
+
+    url: "https://gentle-mesa-23788.herokuapp.com/webhook", 
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({'head': JSON.stringify({'head': window.location.hash.substring(1)})}),
+    success: function( data ) { 
+        console.log(  data );
+        myJson=data.json()
+        $("#contentload").html(myJson.html);
+    $("#treeload").html(myJson.tree);
+    }   
 })
-.then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
+//.then(function(response) {
+  //  return response.json();
+  //})
+  //.then(function(myJson) {
     // console.log();
 
-    $("#contentload").html(myJson.html);
-    $("#treeload").html(myJson.tree);
-  });
+    //$("#contentload").html(myJson.html);
+    //$("#treeload").html(myJson.tree);
+  //});
 
 
 
