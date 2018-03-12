@@ -22,9 +22,9 @@ $.ajax({
     data: JSON.stringify({'head': window.location.hash.substring(1)}),
     success: function( data ) { 
         console.log(  data );
-        myJson=data.json()
-        $("#contentload").html(myJson.html);
-    $("#treeload").html(myJson.tree);
+        //myJson=data.json()
+        $("#contentload").html(data.html);
+    $("#treeload").html(data.tree);
     }   
 })
 //.then(function(response) {
