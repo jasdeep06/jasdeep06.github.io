@@ -1,18 +1,7 @@
 var url = "https://gentle-mesa-23788.herokuapp.com/webhook";
 
-// var header = new Headers({
-//     'Access-Control-Allow-Origin':'*'
-// });
-
-//fetch(url,
-//{
-//	method:'post',
- // body:JSON.stringify({'head': window.location.hash.substring(1)})
-
-
-	// headers: 'Access-Control-Allow-Origin'
-	
-//})
+function get_data(){
+$('#loader').show();
 $.ajax({
           headers: {  'Access-Control-Allow-Origin': '*'},
 
@@ -26,19 +15,14 @@ $.ajax({
         $("#contentload").html(data.html);
     $("#treeload").html(data.tree);
     }   
-})
-//.then(function(response) {
-  //  return response.json();
-  //})
-  //.then(function(myJson) {
-    // console.log();
-
-    //$("#contentload").html(myJson.html);
-    //$("#treeload").html(myJson.tree);
-  //});
+}).done(function( msg ) {
+    $('#loader').hide();
+    console.log(msg);
+});
+}
 
 
-
+ get_data()
 
 $('#treeload').on('click', 'ul li a', function(e) {
 
@@ -76,7 +60,43 @@ $('.toolbar a').click(function(e) {
 
 
 
+$('#save').click(function(e) {
+    console.log("clicked")
+    get_tree_and_blob_html(1,send_to_mongo);
+  });
 
+
+
+function get_tree_and_blob_html(id,callback)
+{
+  head= window.location.hash.substring(1)
+  content_html=$('#contentload').html()
+  tree_html=$('#treeload').html()
+  callback(content_html,tree_html,head)
+  
+
+}
+
+
+function send_to_mongo(html,tree_html,head)
+{
+    object={"$set":{'html':html,'tree':tree_html,'synced_with_popup':"no"}}
+    query="{'head':'"+String(head) +"'}"
+    console.log(query)
+    console.log("https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+query+"&u=true")
+    $.ajax({
+
+    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+query+"&u=true",
+
+    type: "PUT",
+    data: JSON.stringify( object ),
+    contentType: "application/json"
+}).done(function( msg ) {
+    
+    console.log(msg);
+});
+
+}
 
 // var xhttp = new XMLHttpRequest();
 // xhttp.open("POST","https://gentle-mesa-23788.herokuapp.com/webhook", true );
