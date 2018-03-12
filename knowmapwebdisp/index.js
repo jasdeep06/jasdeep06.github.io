@@ -19,7 +19,7 @@ $.ajax({
     url: "https://gentle-mesa-23788.herokuapp.com/webhook", 
     type: "POST",
     contentType: "application/json",
-    data: JSON.stringify({'head': JSON.stringify({'head': window.location.hash.substring(1)})}),
+    data: JSON.stringify({'head': window.location.hash.substring(1)}),
     success: function( data ) { 
         console.log(  data );
         myJson=data.json()
