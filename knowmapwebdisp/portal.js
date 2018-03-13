@@ -4,6 +4,7 @@ function email(){
  var email =   $('#emailid').val();
   console.log(email);
   get_from_mongo(email);
+  return false;
 }
 
 
