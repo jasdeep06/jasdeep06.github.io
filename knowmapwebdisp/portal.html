@@ -38,6 +38,10 @@
   text-decoration:  none;
 
 }*/
+
+#bookload::-webkit-scrollbar { 
+    display: none; 
+}
 </style>
 
 </head>
@@ -86,7 +90,7 @@
 
 <div class="container-fluid" >
 	<div class="row">
-		<div class="col-lg-1" style=" padding-left: 0; padding-right: 0; background-color: #393836; height: 100vh; width: 117px;">
+		<div class="col-lg-1" style=" padding-left: 0; padding-right: 0; background-color: #393836; height: 93vh; width: 117px;">
 			
 			<!-- sidestbar -->
 			
@@ -106,17 +110,17 @@
 	<div class="col-lg-10">
 		
 <center>
-<form class="form-inline" style="margin-top: 10px;" data-toggle="validator" role="form" onsubmit="return  email();">
+<form class="form-inline" style="margin-top: 10px;" data-toggle="validator" role="form">
 	 <div class="form-group mx-lg-5 mb-2">
     
-    <input type="email" class="form-control" id="emailid" placeholder="email">
+    <input type="text" class="form-control" id="emailid" placeholder="email">
   </div>
-  <button type="submit" class="btn btn-primary mb-2" >Confirm identity</button>
+  <button type="submit" class="btn btn-primary mb-2" onclick =" email()" >Confirm identity</button>
 
 </form>
 </center>
 
-<div id="bookload"></div>
+<div id="bookload" style="height: 93vh; overflow: scroll; "></div>
 		
 
 

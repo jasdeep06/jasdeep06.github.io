@@ -2,7 +2,7 @@ var bookload = document.getElementById('bookload');
 
 function email(){ 
  var email =   $('#emailid').val();
-  // console.log(email);
+  console.log(email);
   get_from_mongo(email);
 }
 

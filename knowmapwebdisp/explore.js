@@ -99,17 +99,30 @@ function bookloader(obj,intros,callback){
 
 function render(email,link,heading,topic){
 
+  var head = heading.substring(0,100);
+  // console.log(head.length);
+  // initial_length=head.length
+  // if(head.length< 100){
+  //   var space = "</br>";
+  //   for(var ii = 0 ; ii < 5 ; ii++){
+  //     head  = head + space; 
+  //   }
+  // }
+
+  console.log(head);
+
   bookload.innerHTML = bookload.innerHTML + `
-  <div class="w3-card-4" style="width:25%; margin: 15px; display: inline-block;">
+  <div class="w3-card-4" style="width:25%;  margin: 15px; display: inline-block;">
     <header class="w3-container w3-light-grey">
-      <h4 style="font-weight: 500">KnowBook</h4 >
+      <h4 style="font-weight: 500">`+topic+`</h4 >
     </header>
 
 
-    <div class="w3-container" style="background-color: #fff;">
-    <p style="text-align: justify;">
-    <p style="font-weight: 600">`+topic+`</p> 
-     `+heading+`
+    <div class="w3-container" style="background-color: #fff; height: 200px;">
+
+    <p style="text-align: left; margin-top:10px;">
+   
+     `+head+`
     </p>  
      <p>By @`+email.split('@')[0]+`</p>
       
