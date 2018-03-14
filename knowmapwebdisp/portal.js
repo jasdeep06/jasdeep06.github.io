@@ -123,9 +123,9 @@ function render(email,link,heading,topic){
     </header>
 
 
-   <div class="w3-container" style="background-color: #fff; height: 150px;">
+     <div class="w3-container" style="background-color: #fff; height: 150px;">
 
-    <p style="text-align: left; margin-top:10px;">
+    <p style="text-align: left; margin-top:10px; overflow:hidden;">
    
      `+head+`
     </p>  

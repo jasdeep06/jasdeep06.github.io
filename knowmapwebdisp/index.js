@@ -47,7 +47,7 @@ console.log('ssd');
   var startOfName = $(this).attr('href').indexOf("#"),
       // ...then use it as the argument in the slice() method (add 1 so you don't include the # character).
       clickRef = $(this).attr('href').slice(startOfName + 1),
-      targetEl = $('a[name=' + clickRef + ']').parent('h4'); // select the element this link is pointing to
+      targetEl = $('a[name=' + clickRef + ']').parent('h6'); // select the element this link is pointing to
 
   // scroll there smoothly:
   scrollThere(targetEl, 400);
@@ -229,7 +229,8 @@ function section(id, treeid , value){
 
         
         // creating other section
-        $( "<span id='"+ id+"zz' class='glyphicon glyphicon-arrow-right' style = 'margin-top: 17px;'></span><h4 style = 'font-weight: 500; display:inline;' id='"+ id+"zzz' ><a name='"+id+"'></a>"+ value+":-</h4><div class='sections' id='"+ id+"z'  style= 'background-color : #efefef;' contenteditable></div> " ).insertAfter( parentid);
+        $( "<h6><a name='"+id+"'></a></h6><span id='"+ id+"zz' class='glyphicon glyphicon-arrow-right' style = 'margin-top: 17px;'></span><h4 style = 'font-weight: 500; display:inline;' id='"+ id+"zzz' >"+ value+":-</h4><div class='sections' id='"+ id+"z'  style= 'background-color : #efefef;' contenteditable></div> " ).insertAfter( parentid);
+       
     
     // previousid = id ; // keeping track for first or other section
 
