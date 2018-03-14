@@ -4,6 +4,7 @@ function email(){
  var email =   $('#emailid').val();
   console.log(email);
   get_from_mongo(email);
+  $('#exploader').show();
   return false;
 }
 
@@ -23,6 +24,7 @@ function get_from_mongo(email)
     contentType: "application/json"
 }).done(function( object ) {
 
+$('#exploader').hide();
  
    var intros=get_intros(object);
    console.log(intros);
@@ -112,18 +114,18 @@ function bookloader(obj,intros,callback){
 
 function render(email,link,heading,topic){
 
-   var head = heading.substring(0,100);
+  var head = heading.substring(0,100);
 
   bookload.innerHTML = bookload.innerHTML + `
-  <div class="w3-card-4" style="width:25%; margin: 15px; display: inline-block;">
+  <div class="w3-card-4" style="width:23%; margin: 10px; display: inline-block;">
     <header class="w3-container w3-light-grey">
-      <h4 style="font-weight: 500">`+topic+`</h4 >
+      <h4 style="font-weight: 500">KnowBook</h4 >
     </header>
 
 
-    <div class="w3-container" style="background-color: #fff; height: 200px;">
+    <div class="w3-container" style="background-color: #fff;">
     <p style="text-align: justify;">
-     
+    <p style="font-weight: 600">`+topic+`</p> 
      `+head+`
     </p>  
      <p>By @`+email.split('@')[0]+`</p>

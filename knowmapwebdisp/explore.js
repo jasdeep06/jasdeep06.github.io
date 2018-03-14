@@ -18,7 +18,7 @@ function get_from_mongo()
     contentType: "application/json"
 }).done(function( object ) {
 
- 
+ $('#exploader').hide();
    var intros=get_intros(object)
    console.log(intros)
 
@@ -112,7 +112,7 @@ function render(email,link,heading,topic){
   console.log(head);
 
   bookload.innerHTML = bookload.innerHTML + `
-  <div class="w3-card-4" style="width:25%;  margin: 15px; display: inline-block;">
+  <div class="w3-card-4" style="width:23%;  margin: 10px; display: inline-block;">
     <header class="w3-container w3-light-grey">
       <h4 style="font-weight: 500">`+topic+`</h4 >
     </header>
