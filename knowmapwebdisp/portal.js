@@ -119,13 +119,14 @@ function render(email,link,heading,topic){
   bookload.innerHTML = bookload.innerHTML + `
   <div class="w3-card-4" style="width:23%; margin: 10px; display: inline-block;">
     <header class="w3-container w3-light-grey">
-      <h4 style="font-weight: 500">KnowBook</h4 >
+      <h4 style="font-weight: 500">`+topic+`</h4 >
     </header>
 
 
-    <div class="w3-container" style="background-color: #fff;">
-    <p style="text-align: justify;">
-    <p style="font-weight: 600">`+topic+`</p> 
+   <div class="w3-container" style="background-color: #fff; height: 150px;">
+
+    <p style="text-align: left; margin-top:10px;">
+   
      `+head+`
     </p>  
      <p>By @`+email.split('@')[0]+`</p>
