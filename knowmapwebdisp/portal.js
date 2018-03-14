@@ -112,6 +112,8 @@ function bookloader(obj,intros,callback){
 
 function render(email,link,heading,topic){
 
+   var head = heading.substring(0,100);
+
   bookload.innerHTML = bookload.innerHTML + `
   <div class="w3-card-4" style="width:25%; margin: 15px; display: inline-block;">
     <header class="w3-container w3-light-grey">
@@ -122,7 +124,7 @@ function render(email,link,heading,topic){
     <div class="w3-container" style="background-color: #fff; height: 200px;">
     <p style="text-align: justify;">
      
-     `+heading+`
+     `+head+`
     </p>  
      <p>By @`+email.split('@')[0]+`</p>
       
