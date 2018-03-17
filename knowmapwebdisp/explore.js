@@ -164,7 +164,7 @@ function get_checkBox(){
 
 
           // val = val + '{"'+ $(this).attr("email")+ '":"'+$(this).attr("email") +'" },';
-          val = val + `"`+$(this).attr("email") +`":"`+$(this).attr("value")+`",`;
+          val = val + `"`+$(this).attr("email") + $(this).attr("value") +`",`;
          
           // test[$(this).attr("email")] = $(this).attr("value")
 
@@ -179,7 +179,9 @@ function get_checkBox(){
 
         if(val != "" ){
 
-        test = "{" + val.slice(0,-1) + "}" ;
+        test = "[" + val.slice(0,-1) + "]" ;
+
+        // console.log(JSON.parse(test));
         sessionStorage.setItem('data',test);
 
         window.open("docs/graph.html","_self");
