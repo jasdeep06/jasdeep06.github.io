@@ -108,13 +108,33 @@ function render(email,link,heading,topic){
   //     head  = head + space; 
   //   }
   // }
+/*
+<div class="checkbox checkbox-warning">
+                        <input id="check2" type="checkbox" class="styled" checked>
+                        <label for="check2">
+                            Style 2
+                        </label>
+                    </div>
 
-  console.log(head);
+<input type="checkbox" value="" style="">
+      <h4 style="font-weight: 500; display:inline-block">`+topic+`</h4 >
+
+
+
+*/
+  var trimtopic = topic.split('&nbsp;').join('').split(' ').join('')
+
 
   bookload.innerHTML = bookload.innerHTML + `
   <div class="w3-card-4" style="width:23%;  margin: 10px; display: inline-block;">
     <header class="w3-container w3-light-grey">
-      <h4 style="font-weight: 500">`+topic+`</h4 >
+      <div class="checkbox checkbox-success">
+        <input id="checkbox" email="`+email+`" value="`+trimtopic+`" type="checkbox" class="styled check" >
+        <label style=" font-weight: 500; font-size:15px;" >
+            `+topic.split('&nbsp;').join('')+`               
+         </label>
+      </div>
+      
     </header>
 
 
@@ -131,5 +151,31 @@ function render(email,link,heading,topic){
   </div>
 
 `
+
+}
+
+
+
+
+function get_checkBox(){
+     var val = {};
+        $('.check:checked').each(function(i){
+          // val[i] = $(this).val();
+          console.log($(this).attr("email"));
+          console.log($(this).attr("value"));
+          val[$(this).attr("email")] = $(this).attr("value")
+
+        });
+
+        if(!jQuery.isEmptyObject(val)){
+
+        console.log(val);
+        sessionStorage.setItem('data',JSON.stringify(val));
+
+        window.open("docs/graph.html","_self");
+
+        }else{
+          return false;
+        }
 
 }

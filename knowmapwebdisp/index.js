@@ -1,1 +1,286 @@
-var _0x694a=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x67\x65\x6E\x74\x6C\x65\x2D\x6D\x65\x73\x61\x2D\x32\x33\x37\x38\x38\x2E\x68\x65\x72\x6F\x6B\x75\x61\x70\x70\x2E\x63\x6F\x6D\x2F\x77\x65\x62\x68\x6F\x6F\x6B","\x74\x72\x65\x65\x6C\x6F\x61\x64","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","","\x73\x68\x6F\x77","\x23\x6C\x6F\x61\x64\x65\x72","\x68\x69\x64\x65","\x6C\x6F\x67","\x64\x6F\x6E\x65","\x2A","\x50\x4F\x53\x54","\x61\x70\x70\x6C\x69\x63\x61\x74\x69\x6F\x6E\x2F\x6A\x73\x6F\x6E","\x73\x75\x62\x73\x74\x72\x69\x6E\x67","\x68\x61\x73\x68","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x73\x74\x72\x69\x6E\x67\x69\x66\x79","\x68\x74\x6D\x6C","\x23\x63\x6F\x6E\x74\x65\x6E\x74\x6C\x6F\x61\x64","\x74\x72\x65\x65","\x23\x74\x72\x65\x65\x6C\x6F\x61\x64","\x66\x69\x6E\x61\x6C\x69","\x61\x6A\x61\x78","\x63\x6C\x69\x63\x6B","\x75\x6C\x20\x6C\x69\x20\x61","\x73\x73\x64","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23","\x69\x6E\x64\x65\x78\x4F\x66","\x68\x72\x65\x66","\x61\x74\x74\x72","\x73\x6C\x69\x63\x65","\x68\x36","\x70\x61\x72\x65\x6E\x74","\x61\x5B\x6E\x61\x6D\x65\x3D","\x5D","\x6F\x6E","\x73\x63\x72\x6F\x6C\x6C\x54\x6F\x70","\x74\x6F\x70","\x6F\x66\x66\x73\x65\x74","\x73\x77\x69\x6E\x67","\x61\x6E\x69\x6D\x61\x74\x65","\x73\x74\x6F\x70","\x68\x74\x6D\x6C\x2C\x20\x62\x6F\x64\x79\x20\x2C\x20\x23\x63\x6F\x6E\x74\x65\x6E\x74\x6C\x6F\x61\x64","\x63\x6F\x6D\x6D\x61\x6E\x64","\x64\x61\x74\x61","\x65\x78\x65\x63\x43\x6F\x6D\x6D\x61\x6E\x64","\x2E\x74\x6F\x6F\x6C\x62\x61\x72\x20\x61","\x63\x6C\x69\x63\x6B\x65\x64","\x23\x73\x61\x76\x65\x6C\x6F\x61\x64\x65\x72","\x23\x73\x61\x76\x65","\x6E\x6F","\x7B\x27\x68\x65\x61\x64\x27\x3A\x27","\x27\x7D","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x6D\x6F\x6E\x67\x6F\x6C\x61\x62\x2E\x63\x6F\x6D\x2F\x61\x70\x69\x2F\x31\x2F\x64\x61\x74\x61\x62\x61\x73\x65\x73\x2F\x6B\x6E\x6F\x77\x6D\x61\x70\x2F\x63\x6F\x6C\x6C\x65\x63\x74\x69\x6F\x6E\x73\x2F\x6B\x6E\x6F\x77\x5F\x68\x74\x6D\x6C\x3F\x61\x70\x69\x4B\x65\x79\x3D\x41\x64\x58\x68\x4B\x5F\x46\x5A\x76\x6B\x56\x71\x5F\x36\x4F\x5A\x66\x67\x4A\x4B\x79\x41\x4E\x72\x5F\x5A\x47\x53\x63\x6B\x5F\x42\x26\x71\x3D","\x26\x75\x3D\x74\x72\x75\x65","\x50\x55\x54","\x76\x61\x6C\x75\x65","\x67\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x74\x72\x65\x65\x6E\x6F\x64\x65","\x63\x68\x69\x6C\x64","\x78","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x0D\x0A\x20\x20\x3C\x75\x6C\x20\x69\x64\x3D\x20\x27","\x27\x20\x73\x74\x79\x6C\x65\x3D\x22\x20\x6C\x69\x73\x74\x2D\x73\x74\x79\x6C\x65\x3A\x20\x6E\x6F\x6E\x65\x3B\x20\x70\x61\x64\x64\x69\x6E\x67\x2D\x6C\x65\x66\x74\x3A\x20\x31\x37\x70\x78\x3B\x20\x62\x6F\x72\x64\x65\x72\x2D\x6C\x65\x66\x74\x20\x3A\x20\x31\x70\x78\x20\x73\x6F\x6C\x69\x64\x20\x23\x42\x44\x42\x44\x42\x44\x3B\x22\x20\x3E\x0D\x0A\x20\x20\x3C\x6C\x69\x20\x73\x74\x79\x6C\x65\x20\x3D\x20\x27\x63\x6F\x6C\x6F\x72\x3A\x20\x23\x66\x66\x66\x66\x66\x66\x3B\x20\x6D\x61\x72\x67\x69\x6E\x2D\x62\x6F\x74\x74\x6F\x6D\x3A\x20\x34\x70\x78\x3B\x27\x3E\x20\x0D\x0A\x20\x20\x20\x20\x3C\x73\x70\x61\x6E\x20\x69\x64\x3D\x20\x27","\x27\x20\x76\x61\x6C\x75\x65\x3D\x22\x64\x65\x6C\x22\x20\x63\x6C\x61\x73\x73\x3D\x22\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x20\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x2D\x72\x65\x6D\x6F\x76\x65\x20\x72\x65\x6D\x6F\x76\x65\x22\x3E\x3C\x2F\x73\x70\x61\x6E\x3E\x0D\x0A\x20\x20\x20\x20\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x22\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x20\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x2D\x61\x72\x72\x6F\x77\x2D\x72\x69\x67\x68\x74\x22\x3E\x3C\x2F\x73\x70\x61\x6E\x3E\x3C\x61\x20\x68\x72\x65\x66\x3D\x22\x23","\x22\x20\x73\x74\x79\x6C\x65\x3D\x22\x63\x6F\x6C\x6F\x72\x3A\x23\x66\x66\x66\x66\x66\x66\x3B\x22\x20\x69\x64\x3D\x22","\x22\x3E\x20\x26\x6E\x62\x73\x70\x3B","\x20\x26\x6E\x62\x73\x70\x3B\x3C\x2F\x61\x3E\x0D\x0A\x20\x20\x0D\x0A\x20\x20\x20\x20\x20\x3C\x73\x70\x61\x6E\x20\x76\x61\x6C\x75\x65\x3D\x22","\x22\x20\x69\x64\x3D\x27\x65\x64\x69\x74\x27\x20\x63\x6C\x61\x73\x73\x3D\x22\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x20\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x2D\x70\x65\x6E\x63\x69\x6C\x20\x68\x6F\x76\x20\x72\x69\x67\x68\x74\x6D\x61\x72\x67\x6E\x22\x20\x73\x74\x79\x6C\x65\x3D\x22\x63\x6F\x6C\x6F\x72\x3A\x23\x31\x37\x61\x63\x66\x34\x3B\x22\x3E\x3C\x2F\x73\x70\x61\x6E\x3E\x0D\x0A\x20\x20\x20\x20\x3C\x73\x70\x61\x6E\x20\x69\x64\x3D\x20\x27","\x27\x20\x76\x61\x6C\x75\x65\x3D\x20\x27","\x27\x20\x63\x6C\x61\x73\x73\x3D\x22\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x20\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x2D\x70\x6C\x75\x73\x2D\x73\x69\x67\x6E\x20\x68\x6F\x76\x22\x20\x64\x61\x74\x61\x2D\x74\x6F\x67\x67\x6C\x65\x3D\x22\x6D\x6F\x64\x61\x6C\x22\x0D\x0A\x20\x20\x20\x64\x61\x74\x61\x2D\x74\x61\x72\x67\x65\x74\x3D\x22\x23\x6D\x79\x4D\x6F\x64\x61\x6C\x31\x22\x3E\x3C\x2F\x73\x70\x61\x6E\x3E\x0D\x0A\x20\x20\x3C\x2F\x6C\x69\x3E\x3C\x2F\x75\x6C\x3E","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x63\x68\x69\x6C\x64\x62\x74\x6E","\x75\x6C\x20\x73\x70\x61\x6E","\x64\x65\x6C","\x69\x64","\x65\x64\x69\x74","\x63\x6F\x6E\x74\x65\x6E\x74\x6C\x6F\x61\x64","\x74\x72\x65\x65\x69\x64","\x75\x6C","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x73\x42\x79\x54\x61\x67\x4E\x61\x6D\x65","\x6C\x65\x6E\x67\x74\x68","\x61","\x6C\x69","\x7A","\x69\x6E\x73\x65\x72\x74\x41\x66\x74\x65\x72","\x3C\x68\x36\x3E\x3C\x61\x20\x6E\x61\x6D\x65\x3D\x27","\x27\x3E\x3C\x2F\x61\x3E\x3C\x2F\x68\x36\x3E\x3C\x73\x70\x61\x6E\x20\x69\x64\x3D\x27","\x7A\x7A\x27\x20\x63\x6C\x61\x73\x73\x3D\x27\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x20\x67\x6C\x79\x70\x68\x69\x63\x6F\x6E\x2D\x61\x72\x72\x6F\x77\x2D\x72\x69\x67\x68\x74\x27\x20\x73\x74\x79\x6C\x65\x20\x3D\x20\x27\x6D\x61\x72\x67\x69\x6E\x2D\x74\x6F\x70\x3A\x20\x31\x37\x70\x78\x3B\x27\x3E\x3C\x2F\x73\x70\x61\x6E\x3E\x3C\x68\x34\x20\x73\x74\x79\x6C\x65\x20\x3D\x20\x27\x66\x6F\x6E\x74\x2D\x77\x65\x69\x67\x68\x74\x3A\x20\x35\x30\x30\x3B\x20\x64\x69\x73\x70\x6C\x61\x79\x3A\x69\x6E\x6C\x69\x6E\x65\x3B\x27\x20\x69\x64\x3D\x27","\x7A\x7A\x7A\x27\x20\x3E","\x3A\x2D\x3C\x2F\x68\x34\x3E\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x27\x73\x65\x63\x74\x69\x6F\x6E\x73\x27\x20\x69\x64\x3D\x27","\x7A\x27\x20\x20\x73\x74\x79\x6C\x65\x3D\x20\x27\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x2D\x63\x6F\x6C\x6F\x72\x20\x3A\x20\x23\x65\x66\x65\x66\x65\x66\x3B\x27\x20\x63\x6F\x6E\x74\x65\x6E\x74\x65\x64\x69\x74\x61\x62\x6C\x65\x3E\x3C\x2F\x64\x69\x76\x3E\x20","\x63\x68\x69\x6C\x64\x72\x65\x6E","\x72\x65\x6D\x6F\x76\x65","\x7A\x7A","\x63\x6F\x6E\x74\x65\x6E\x74\x65\x64\x69\x74\x61\x62\x6C\x65","\x66\x61\x6C\x73\x65","\x74\x72\x75\x65","\x63\x6F\x6C\x6F\x72","\x72\x65\x64","\x63\x73\x73","\x69\x6E\x70\x75\x74","\x74\x65\x78\x74","\x7A\x7A\x7A","\x77\x68\x69\x74\x65"];var url=_0x694a[0];var treerenderpointer=document[_0x694a[2]](_0x694a[1]);var treenodid=_0x694a[3];var newtreeid=_0x694a[3];var i;var previousid;function get_data(){$(_0x694a[5])[_0x694a[4]]();$[_0x694a[21]]({headers:{"\x41\x63\x63\x65\x73\x73\x2D\x43\x6F\x6E\x74\x72\x6F\x6C\x2D\x41\x6C\x6C\x6F\x77\x2D\x4F\x72\x69\x67\x69\x6E":_0x694a[9]},url:_0x694a[0],type:_0x694a[10],contentType:_0x694a[11],data:JSON[_0x694a[15]]({"\x68\x65\x61\x64":window[_0x694a[14]][_0x694a[13]][_0x694a[12]](1)}),success:function(_0xc01ex9){console[_0x694a[7]](_0xc01ex9);$(_0x694a[17])[_0x694a[16]](_0xc01ex9[_0x694a[16]]);$(_0x694a[19])[_0x694a[16]](_0xc01ex9[_0x694a[18]]);i= _0xc01ex9[_0x694a[20]];console[_0x694a[7]](i)}})[_0x694a[8]](function(_0xc01ex8){$(_0x694a[5])[_0x694a[6]]();console[_0x694a[7]](_0xc01ex8)})}get_data();$(_0x694a[19])[_0x694a[35]](_0x694a[22],_0x694a[23],function(_0xc01exa){console[_0x694a[7]](_0x694a[24]);_0xc01exa[_0x694a[25]]();var _0xc01exb=$(this)[_0x694a[29]](_0x694a[28])[_0x694a[27]](_0x694a[26]),_0xc01exc=$(this)[_0x694a[29]](_0x694a[28])[_0x694a[30]](_0xc01exb+ 1),_0xc01exd=$(_0x694a[33]+ _0xc01exc+ _0x694a[34])[_0x694a[32]](_0x694a[31]);scrollThere(_0xc01exd,400)});function scrollThere(_0xc01exf,_0xc01ex10){var _0xc01ex11=_0xc01exf[_0x694a[32]]()[_0x694a[36]]();var _0xc01ex12=_0xc01exf[_0x694a[38]]()[_0x694a[37]];$(_0x694a[42])[_0x694a[41]]()[_0x694a[40]]({scrollTop:_0xc01ex12+ _0xc01ex11- 115},_0xc01ex10,_0x694a[39])}$(_0x694a[46])[_0x694a[22]](function(_0xc01exa){document[_0x694a[45]]($(this)[_0x694a[44]](_0x694a[43]),false,null)});$(_0x694a[49])[_0x694a[22]](function(_0xc01exa){console[_0x694a[7]](_0x694a[47]);get_tree_and_blob_html(1,send_to_mongo);$(_0x694a[48])[_0x694a[4]]()});function get_tree_and_blob_html(_0xc01ex14,_0xc01ex15){head= window[_0x694a[14]][_0x694a[13]][_0x694a[12]](1);content_html= $(_0x694a[17])[_0x694a[16]]();tree_html= $(_0x694a[19])[_0x694a[16]]();_0xc01ex15(content_html,tree_html,head)}function send_to_mongo(_0xc01ex17,_0xc01ex18,_0xc01ex19){object= {"\x24\x73\x65\x74":{"\x68\x74\x6D\x6C":_0xc01ex17,"\x74\x72\x65\x65":_0xc01ex18,"\x73\x79\x6E\x63\x65\x64\x5F\x77\x69\x74\x68\x5F\x70\x6F\x70\x75\x70":_0x694a[50],"\x66\x69\x6E\x61\x6C\x69":i}};query= _0x694a[51]+ String(_0xc01ex19)+ _0x694a[52];console[_0x694a[7]](query);console[_0x694a[7]](_0x694a[53]+ query+ _0x694a[54]);$[_0x694a[21]]({url:_0x694a[53]+ query+ _0x694a[54],type:_0x694a[55],data:JSON[_0x694a[15]](object),contentType:_0x694a[11]})[_0x694a[8]](function(_0xc01ex8){$(_0x694a[48])[_0x694a[6]]();console[_0x694a[7]](_0xc01ex8)})}function child(_0xc01exa){treenodid= _0xc01exa[_0x694a[57]](_0x694a[56])}document[_0x694a[2]](_0x694a[72])[_0x694a[71]](_0x694a[22],function(){if(treenodid){newtreeid= _0x694a[58]+ i;var _0xc01ex1b=document[_0x694a[2]](treenodid);var _0xc01ex1c=document[_0x694a[2]](_0x694a[59])[_0x694a[56]];if(_0xc01ex1c!= _0x694a[3]){var _0xc01ex1d=newtreeid+ _0x694a[60];_0xc01ex1b[_0x694a[61]]= _0xc01ex1b[_0x694a[61]]+ _0x694a[62]+ newtreeid+ _0x694a[63]+ newtreeid+ _0x694a[64]+ i+ _0x694a[65]+ i+ _0x694a[66]+ _0xc01ex1c+ _0x694a[67]+ i+ _0x694a[68]+ _0xc01ex1d+ _0x694a[69]+ newtreeid+ _0x694a[70];var _0xc01ex14=i++;section(_0xc01ex14,newtreeid,_0xc01ex1c)}};document[_0x694a[2]](_0x694a[59])[_0x694a[56]]= _0x694a[3]});$(_0x694a[19])[_0x694a[35]](_0x694a[22],_0x694a[73],function(){if($(this)[_0x694a[29]](_0x694a[56])== _0x694a[74]){removetree($(this)[_0x694a[29]](_0x694a[75]))}else {if($(this)[_0x694a[29]](_0x694a[75])== _0x694a[76]){edittree($(this)[_0x694a[29]](_0x694a[56]))}else {child(this)}}});var editablespace=document[_0x694a[2]](_0x694a[77]);function section(_0xc01ex14,_0xc01ex20,_0xc01ex21){console[_0x694a[7]](_0x694a[75],_0xc01ex14);console[_0x694a[7]](_0x694a[78],_0xc01ex20);console[_0x694a[7]](_0x694a[56],_0xc01ex21);var _0xc01ex22=$(_0x694a[26]+ _0xc01ex20)[_0x694a[32]]()[0][_0x694a[80]](_0x694a[79]);var _0xc01ex23=_0xc01ex22[_0xc01ex22[_0x694a[81]]- 2];if(!_0xc01ex23){parentid= $(_0x694a[26]+ _0xc01ex20)[_0x694a[32]]()[0][_0x694a[80]](_0x694a[83])[0][_0x694a[80]](_0x694a[82])[0][_0x694a[57]](_0x694a[28])+ _0x694a[84]}else {parentid= _0xc01ex23[_0x694a[80]](_0x694a[83])[0][_0x694a[80]](_0x694a[82])[0][_0x694a[57]](_0x694a[28])+ _0x694a[84]};$(_0x694a[86]+ _0xc01ex14+ _0x694a[87]+ _0xc01ex14+ _0x694a[88]+ _0xc01ex14+ _0x694a[89]+ _0xc01ex21+ _0x694a[90]+ _0xc01ex14+ _0x694a[91])[_0x694a[85]](parentid)}function removetree(_0xc01ex25){var _0xc01ex26=$(_0x694a[26]+ _0xc01ex25)[_0x694a[92]]();for(var _0xc01ex27=0;_0xc01ex27< _0xc01ex26[_0x694a[81]];_0xc01ex27++){let _0xc01ex28=_0xc01ex26[_0xc01ex27][_0x694a[80]](_0x694a[82])[0][_0x694a[57]](_0x694a[28])+ _0x694a[84];console[_0x694a[7]](_0xc01ex28);$(_0xc01ex28)[_0x694a[93]]();$(_0xc01ex28+ _0x694a[84])[_0x694a[93]]();$(_0xc01ex28+ _0x694a[94])[_0x694a[93]]()};$(_0x694a[26]+ _0xc01ex25)[_0x694a[93]]()}function edittree(_0xc01ex2a){console[_0x694a[7]](_0xc01ex2a);var _0xc01ex21=$(_0x694a[26]+ _0xc01ex2a)[_0x694a[29]](_0x694a[95]);console[_0x694a[7]](_0xc01ex21);if(_0xc01ex21== _0x694a[96]){$(_0x694a[26]+ _0xc01ex2a)[_0x694a[29]](_0x694a[95],_0x694a[97]);$(_0x694a[26]+ _0xc01ex2a)[_0x694a[100]](_0x694a[98],_0x694a[99]);$(_0x694a[26]+ _0xc01ex2a)[_0x694a[35]](_0x694a[101],function(){$(_0x694a[26]+ _0xc01ex2a+ _0x694a[103])[_0x694a[102]]($(_0x694a[26]+ _0xc01ex2a)[_0x694a[102]]())})}else {$(_0x694a[26]+ _0xc01ex2a)[_0x694a[29]](_0x694a[95],_0x694a[96]);$(_0x694a[26]+ _0xc01ex2a)[_0x694a[100]](_0x694a[98],_0x694a[104]);tree2db()}}
+var url = "https://gentle-mesa-23788.herokuapp.com/webhook";
+var treerenderpointer = document.getElementById('treeload'); // id of dom element where tree is going to render
+var treenodid = '';
+var newtreeid = '';
+var i; //id
+var previousid;// for parent or child
+
+
+
+
+function get_data(){
+$('#loader').show();
+$.ajax({
+          headers: {  'Access-Control-Allow-Origin': '*'},
+
+    url: "https://gentle-mesa-23788.herokuapp.com/webhook", 
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({'head': window.location.hash.substring(1)}),
+    success: function( data ) { 
+        console.log(  data );
+        //myJson=data.json()
+        $("#contentload").html(data.html);
+    $("#treeload").html(data.tree);
+
+    i = data.finali;
+    console.log(i);
+    }   
+}).done(function( msg ) {
+    $('#loader').hide();
+    
+    console.log(msg);
+});
+}
+
+
+ get_data()
+
+
+
+$('#treeload').on('click', 'ul li a', function(e) {
+
+console.log('ssd');
+  e.preventDefault(); // don't jump like a typical html anchor
+
+  // find the index of the "#" character in the href string...
+  var startOfName = $(this).attr('href').indexOf("#"),
+      // ...then use it as the argument in the slice() method (add 1 so you don't include the # character).
+      clickRef = $(this).attr('href').slice(startOfName + 1),
+      targetEl = $('a[name=' + clickRef + ']').parent('h6'); // select the element this link is pointing to
+
+  // scroll there smoothly:
+  scrollThere(targetEl, 400);
+
+});
+
+
+function scrollThere(targetElement, speed) {
+    
+    var scrollPosition = targetElement.parent().scrollTop();
+    var postionOfTargetElement = targetElement.offset().top;
+    
+  // initiate an animation to a certain page element:
+  $('html, body , #contentload').stop().animate(
+    { scrollTop: postionOfTargetElement + scrollPosition - 115}, // move window so target element is at top of window
+    speed, // speed in milliseconds
+    'swing' // easing
+  ); // end animate
+} // end
+
+$('.toolbar a').click(function(e) {
+    document.execCommand($(this).data('command'), false, null);
+  });//end
+
+
+
+$('#save').click(function(e) {
+    console.log("clicked")
+    get_tree_and_blob_html(1,send_to_mongo);
+     $('#saveloader').show();
+
+    // updateId();
+  });
+
+
+
+function get_tree_and_blob_html(id,callback)
+{
+  head= window.location.hash.substring(1)
+  content_html=$('#contentload').html()
+  tree_html=$('#treeload').html()
+  callback(content_html,tree_html,head)
+  
+
+}
+
+
+function send_to_mongo(html,tree_html,head)
+{
+    object={"$set":{'html':html,'tree':tree_html,'synced_with_popup':"no","finali":i}}
+    query="{'head':'"+String(head) +"'}"
+    console.log(query)
+    console.log("https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+query+"&u=true")
+    $.ajax({
+
+    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+query+"&u=true",
+
+    type: "PUT",
+    data: JSON.stringify( object ),
+    contentType: "application/json"
+}).done(function( msg ) {
+    $('#saveloader').hide();
+    console.log(msg);
+});
+
+}
+
+
+
+/*
+function to get id -->i
+*/
+
+
+function child (e){
+  
+  treenodid = e.getAttribute('value');
+  
+}
+
+
+
+document.getElementById('childbtn').addEventListener("click", function(){
+
+  if (treenodid){
+
+  newtreeid = 'treenode' + i;
+  var treeleaves = document.getElementById(treenodid);  
+  var nodeName = document.getElementById('child').value;
+
+  if(nodeName != ''){
+  
+  var x = newtreeid + 'x';
+
+
+  treeleaves.innerHTML = treeleaves.innerHTML + `
+  <ul id= '`+ newtreeid+`' style=" list-style: none; padding-left: 17px; border-left : 1px solid #BDBDBD;" >
+  <li style = 'color: #ffffff; margin-bottom: 4px;'> 
+    <span id= '`+ newtreeid+`' value="del" class="glyphicon glyphicon-remove remove"></span>
+    <span class="glyphicon glyphicon-arrow-right"></span><a href="#`+ i +`" style="color:#ffffff;" id="`+ i +`"> &nbsp;`+ nodeName+` &nbsp;</a>
+  
+     <span value="`+ i +`" id='edit' class="glyphicon glyphicon-pencil hov rightmargn" style="color:#17acf4;"></span>
+    <span id= '`+x+`' value= '`+ newtreeid+`' class="glyphicon glyphicon-plus-sign hov" data-toggle="modal"
+   data-target="#myModal1"></span>
+  </li></ul>`;
+
+  
+  var id =  i++;  //id tracker
+  // localStorage.setItem("FinalI",String(i));
+
+  section(id,newtreeid , nodeName);
+  // setCurrentId(id)
+
+  }
+  
+  }
+  document.getElementById('child').value = '';
+
+ });
+
+$('#treeload').on('click', 'ul span', function() {
+  //do something
+    
+
+    if($(this).attr("value") =='del'){
+        removetree($(this).attr("id"));
+    }
+    else if($(this).attr("id") =='edit'){
+        
+        edittree($(this).attr("value"));
+    }
+    else{
+    child(this);
+     }
+});
+
+
+var editablespace = document.getElementById('contentload'); // id of the right section
+ 
+    
+function section(id, treeid , value){
+
+    console.log('id',id);
+    console.log('treeid',treeid);
+
+    console.log('value',value);
+
+
+
+    // console.log($('#' + treeid ).parent()[0].getElementsByTagName("ul").length - 1);
+    /*
+    -->get child elemenr
+    -->find its parent
+    -->then find the number of ul(child) in that parent
+    --> find the last ul(child)
+    --> if yes then find the id of li tag inside ul 
+
+    -->if no ul(child) then find the closest li tag
+    -->find the id of the li tag
+    -->create section
+    */
+    var allSelects = $('#' + treeid ).parent()[0].getElementsByTagName("ul");
+    var lastSelect = allSelects[allSelects.length-2];
+
+
+    if(!lastSelect){
+        parentid = $('#' + treeid).parent()[0].getElementsByTagName("li")[0].getElementsByTagName("a")[0].getAttribute('href') + 'z';
+
+    }
+    else{
+        parentid = lastSelect.getElementsByTagName("li")[0].getElementsByTagName("a")[0].getAttribute('href') + 'z';
+    }
+
+    
+    // parentid = $('#' + treeid).parent()[0].getElementsByTagName("li")[0].getElementsByTagName("a")[0].getAttribute('href');
+
+    
+//--> create section
+
+        
+        // creating other section
+        $( "<h6><a name='"+id+"'></a></h6><span id='"+ id+"zz' class='glyphicon glyphicon-arrow-right' style = 'margin-top: 17px;'></span><h4 style = 'font-weight: 500; display:inline;' id='"+ id+"zzz' >"+ value+":-</h4><div class='sections' id='"+ id+"z'  style= 'background-color : #efefef;' contenteditable></div> " ).insertAfter( parentid);
+       
+    
+    // previousid = id ; // keeping track for first or other section
+
+
+}
+
+
+function removetree(nodetree){
+    
+    var treechilds =  $('#' + nodetree ).children();
+  
+    for (var indx = 0; indx < treechilds.length; indx++) {
+        let childs = treechilds[indx].getElementsByTagName("a")[0].getAttribute('href') + 'z';
+        console.log(childs);
+        $( childs ).remove();
+        $( childs + 'z').remove();
+        $( childs + 'zz').remove();
+
+    }
+     $( '#'+ nodetree ).remove();
+}
+
+
+/*
+@edit tree and related content
+*/
+
+function edittree(domid){
+    console.log(domid);
+
+      var value = $('#'+domid).attr('contenteditable');
+      console.log(value);
+    if (value == 'false') {
+        
+       $('#'+domid).attr('contenteditable','true');
+        $('#'+domid).css("color","red");
+
+        $('#'+domid).on('input',function() {
+           
+       $('#'+domid +'zzz').text($('#'+domid).text());
+
+   });
+    }
+    else {
+        
+
+        $('#'+domid).attr('contenteditable','false');
+       $('#'+domid).css("color","white");
+
+       tree2db();
+
+    }
+}
