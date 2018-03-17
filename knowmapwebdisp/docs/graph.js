@@ -1,6 +1,8 @@
 
 var is_data = sessionStorage.getItem('data');
 
+console.log(is_data)
+
 var big_array = [];
 
 if(is_data){
@@ -303,6 +305,8 @@ function init(obj) {
                     icons: {
 //                        'Address': 'home',
                         'Api': 'gear',
+                        'Video':'video-camera',
+                        'Image':'image',
 //                        'BirthDate': 'birthday-cake',
                         'Cookie': 'paw',
 //                        'CreditCard': 'credit-card',
@@ -350,27 +354,27 @@ function init(obj) {
 //                        'zoomIn': 'img/twemoji/1f50d.svg',
 //                        'zoomOut': 'img/twemoji/1f50e.svg'
                     },
-                    minCollision: 60,
+                    // minCollision: 60,
                     // neo4jDataUrl: 'json/neo4jData.json',
                     'neo4jData': obj,
                     nodeRadius: 25,
                     onNodeDoubleClick: function(node) {
-                        switch(node.id) {
-                            case '25':
-                                // Google
-                                window.open(node.properties.url, '_blank');
-                                break;
-                            default:
-                                var maxNodes = 50,
-                                    data = neo4jd3.randomD3Data(node, maxNodes);
-                                neo4jd3.updateWithD3Data(data);
-                                break;
-                        }
+                        // switch(node.id) {
+                        //     case '25':
+                        //         // Google
+                        //         window.open(node.properties.url, '_blank');
+                        //         break;
+                        //     default:
+                        //         var maxNodes = 50,
+                        //             data = neo4jd3.randomD3Data(node, maxNodes);
+                        //         neo4jd3.updateWithD3Data(data);
+                        //         break;
+                        // }
                     },
                     onRelationshipDoubleClick: function(relationship) {
                         console.log('double click on relationship: ' + JSON.stringify(relationship));
                     },
-                    zoomFit: true
+                    zoomFit: false
                 });
             }
 

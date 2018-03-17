@@ -158,19 +158,29 @@ function render(email,link,heading,topic){
 
 
 function get_checkBox(){
-     var val = {};
-        $('.check:checked').each(function(i){
-          // val[i] = $(this).val();
-          console.log($(this).attr("email"));
-          console.log($(this).attr("value"));
-          val[$(this).attr("email")] = $(this).attr("value")
+     var val = "";
+     var test ;
+        $('.check:checked').each(function(i){4
+
+
+          // val = val + '{"'+ $(this).attr("email")+ '":"'+$(this).attr("email") +'" },';
+          val = val + `"`+$(this).attr("email") +`":"`+$(this).attr("value")+`",`;
+         
+          // test[$(this).attr("email")] = $(this).attr("value")
 
         });
 
-        if(!jQuery.isEmptyObject(val)){
+        
 
-        console.log(val);
-        sessionStorage.setItem('data',JSON.stringify(val));
+         // console.log("{" + val.slice(0,-1) + "}");
+        // console.log(JSON.stringify(test))
+        
+          
+
+        if(val != "" ){
+
+        test = "{" + val.slice(0,-1) + "}" ;
+        sessionStorage.setItem('data',test);
 
         window.open("docs/graph.html","_self");
 
