@@ -120,6 +120,12 @@ var promise=function(tree_html,blob_html)
     //console.log(value)
     var parent_link_id=value.id[value.id.length-1];
     var parent_text=$("a#"+parent_link_id,'<div>'+tree_html + '</div>')[0].innerText;
+
+    if(parent_link_id==1)
+    {
+      obj["title"]= parent_text.trim()
+
+    }
     
 
     // console.log(parent_text.trim();
