@@ -122,7 +122,7 @@ var promise=function(tree_html,blob_html)
 
     if(parent_link_id==1)
     {
-      obj["title"]= parent_text
+      obj["title"]= parent_text.trim()
 
     }
     
