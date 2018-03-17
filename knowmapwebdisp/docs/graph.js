@@ -1,5 +1,5 @@
 
-var is_data = sessionStorage.getItem('data');
+var is_data = JSON.parse(sessionStorage.getItem('data'));
 
 console.log(is_data)
 
@@ -13,18 +13,19 @@ if(is_data){
 
 
 // {'$or':[{"head":"prabhjotsingh@gmail.comMachineLearning"},{"head":"jasdeepchhabra94@gmail.comStephenHawking"},]}
-for(var k in JSON.parse(is_data)){
+for(var k in is_data){
 
-  var head = k + JSON.parse(is_data)[k];
+  
+  var head =  is_data[k];
 
   q = q + '{"head":"'+String(head) +'"},';
   
-  
+
   
  }
 
 
-
+  // console.log(q);
  var new_head = "{'$or':[" + q + "]}"; 
 
 
