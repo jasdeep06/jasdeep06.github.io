@@ -83,6 +83,45 @@ $('#save').click(function(e) {
   });
 
 
+$('#restore').click(function(e) {
+    console.log("clicked")
+    set_restore_flag_in_mongo()
+
+
+    //get_tree_and_blob_html(1,send_to_mongo);
+
+     //$('#saveloader').show();
+
+    // updateId();
+  });
+
+
+
+function set_restore_flag_in_mongo()
+{   
+
+  object={"$set":{'restore':"yes"}}
+    query="{'head':'"+String(window.location.hash.substring(1)) +"'}"
+    console.log(query)
+    console.log("https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+query)
+    $.ajax({
+
+    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+query,
+
+    type: "PUT",
+    data: JSON.stringify( object ),
+    contentType: "application/json"
+}).done(function( msg ) {
+    
+    console.log(msg);
+});
+
+
+
+}
+
+
+
 
 function get_tree_and_blob_html(id,callback)
 {
