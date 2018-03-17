@@ -92,7 +92,7 @@ function Neo4jD3(_selector, _options) {
 
     function appendInfoElement(cls, isNode, property, value) {
         var elem = info.append('a');
-
+        //value 
         elem.attr('href', '#')
             .attr('class', cls)
             .html('<strong>' + property + '</strong>' + (value ? (': ' + value) : ''));
@@ -159,7 +159,8 @@ function Neo4jD3(_selector, _options) {
                        }
                    })
                    .on('dblclick', function(d) {
-                       stickNode(d);
+                       // stickNode(d);
+                       d.fixed = true;
 
                        if (typeof options.onNodeDoubleClick === 'function') {
                            options.onNodeDoubleClick(d);
@@ -543,13 +544,14 @@ function Neo4jD3(_selector, _options) {
 
     function initSimulation() {
         var simulation = d3.forceSimulation()
-//                           .velocityDecay(0.8)
-//                           .force('x', d3.force().strength(0.002))
-//                           .force('y', d3.force().strength(0.002))
+                          // .velocityDecay(0.8)
+                          // .force('x', d3.force().strength(0.002))
+                          // .force('y', d3.force().strength(0.002))
                            .force('collide', d3.forceCollide().radius(function(d) {
                                return options.minCollision;
-                           }).iterations(2))
-                           .force('charge', d3.forceManyBody())
+                           })
+                           .iterations(2))
+                           .force('charge', d3.forceManyBody().strength(100).distanceMax(400).distanceMin(60))
                            .force('link', d3.forceLink().id(function(d) {
                                return d.id;
                            }))
@@ -558,9 +560,12 @@ function Neo4jD3(_selector, _options) {
                                tick();
                            })
                            .on('end', function() {
+
+
                                if (options.zoomFit && !justLoaded) {
                                    justLoaded = true;
                                    zoomFit(2);
+
                                }
                            });
 
@@ -745,6 +750,7 @@ function Neo4jD3(_selector, _options) {
     function stickNode(d) {
         d.fx = d3.event.x;
         d.fy = d3.event.y;
+
     }
 
     function tick() {

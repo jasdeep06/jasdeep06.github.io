@@ -116,9 +116,12 @@ var promise=function(tree_html,blob_html)
     var small_array_img=[]
 
     
-
+    console.log(parent)
     //console.log(value)
-    var parent_link_id=value.id[value.id.length-1];
+    // var parent_link_id=value.id[value.id.length-1];
+    var parent_link_id = value.id.substring(8);
+    // console.log(parent_link_id)
+    // console.log(value);
     var parent_text=$("a#"+parent_link_id,'<div>'+tree_html + '</div>')[0].innerText;
 
     if(parent_link_id==1)
@@ -355,7 +358,7 @@ function init(obj) {
 //                        'zoomIn': 'img/twemoji/1f50d.svg',
 //                        'zoomOut': 'img/twemoji/1f50e.svg'
                     },
-                    // minCollision: 60,
+                    minCollision: 60,
                     // neo4jDataUrl: 'json/neo4jData.json',
                     'neo4jData': obj,
                     nodeRadius: 25,
