@@ -250,7 +250,71 @@ function Neo4jD3(_selector, _options) {
                     console.log(node);
 
                        var _icon = icon(d);
-                       return _icon ? '&#x' + _icon : d.properties.name;
+
+                        
+                       if(_icon){
+                        return  '&#x' + _icon
+                       }
+
+                       else{
+                        var test = d.properties.name;
+                        console.log(test);
+                        console.log(test.split(/\s+/)[0].length);
+                          if(test.length < 16 ){
+
+                            if(test.split(/\s+/).length > 1 && test.split(/\s+/).length < 4){
+                                // if(test.split(/\s+/)[0].length > 10){
+
+                                // }
+
+                                 var line = ""; 
+                                 var space = -3;
+                                test.split(/\s+/).map(function(text){
+                                  // console.log(text);
+                                  if(text.length > 8){
+                                  let new_text = text.substring(0,8) + "..";
+                                  // console.log(text);
+                                  line = line + `<tspan x='0' dy='`+space+`'>`+new_text+`</tspan>`;          
+                                  }
+                                  else
+                                  {
+                                    line = line + `<tspan x='0' dy='`+space+`'>`+text+`</tspan>`; 
+                                  }
+                                  space = space + 14;
+
+                                })
+                                space = 0;
+                                return line;
+                            }
+
+                            else if(test.split(/\s+/).length > 4){
+
+                              return test.substring(0,8) + "..";
+
+                            }
+
+                            else{
+                                if(test.split(/\s+/)[0].length > 8){
+
+                                   return test.substring(0,8) + "..";
+                                }
+                                else{
+                                  return d.properties.name;
+                                }
+                            } 
+
+
+
+                        } 
+
+                        else{
+
+                          return test.substring(0,8) + "..";
+                        }
+
+                       }
+
+                        // : d.properties.name;
                    });
     }
 
