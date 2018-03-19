@@ -47,7 +47,7 @@
 </head>
 <body style="background-color: #e5e5e5;">
 
-<nav class="navbar " style="background-color:#292929; border-radius: 0; margin-bottom: 0;">
+<nav class="navbar navbar-fixed-top" style="background-color:#292929; border-radius: 0; margin-bottom: 0;">
  	 <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -90,12 +90,13 @@
 
 <div class="container-fluid" >
 	<div class="row">
-		<div class="col-lg-1" style=" padding-left: 0; padding-right: 0; background-color: #393836; height: 100vh; width: 117px;">
+		<div class="col-lg-1" style=" padding-left: 0; padding-right: 0; background-color: #393836; height: 100vh; width: 117px; position: fixed;">
 			
 			<!-- sidestbar -->
 			
 
-			<ul class="list-group" style="border-radius: 0; margin-top: 20px; ">
+			<ul class="list-group" style="border-radius: 0; margin-top: 60px; ">
+
 				  <li class="list-group-item"  style="border-radius: 0; border: 0; border-top: 1px solid #585858; cursor: pointer;">DASHBOARD</li>
 				  <li class="list-group-item"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;"  onclick="location.href='explore.html#'">EXPLORE</li>
 				  <li class="list-group-item activez"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" >YOUR BOOK</li>
@@ -109,16 +110,20 @@
 
 		<!-- tree -->
 
-		<div class="col-lg-2" style="background-color: #292929; height: 96vh; margin-right: 19px; margin-left: 19px; margin-top: 19px; padding-left: 0; padding-right: 0;" >
+		<div class="col-lg-2" style="  margin-right: 19px; margin-left: 19px;  padding-left: 0; padding-right: 0; padding-top:  60px; position: fixed;    left: 116px;" >
 
-			<div style="background-color: #393836; height: 40px; color: #fff;     padding-top: 11px; padding-left: 17px; font-size: 15px; font-weight: 600">
-			KnowBook	
-				 
-			</div>
-			
+			<div style="background-color: #292929; height: 100vh; ">
 
-			<div  id="treeload" style="width:100%; height: 600px; overflow: scroll;  margin-top: 10px;">
+				<div style="background-color: #393836; height: 40px; color: #fff;     padding-top: 11px; padding-left: 17px; font-size: 15px; font-weight: 600">
+				KnowBook	
+					 
+				</div>
+				
 
+				<div  id="treeload" style="width:100%; height: 600px; overflow: scroll;  margin-top: 10px;">
+
+
+	            </div>
 
             </div>
 
@@ -129,8 +134,10 @@
 
 		<!-- content -->
 		
-		<div class="col-lg-8" style="background-color: #ffffff; height: 96vh; margin-top: 19px; padding-left: 0; padding-right: 0;" >
+		<div class="col-lg-8" style="   padding-left: 0; padding-right: 0;  padding-top: 60px;position: fixed; left: 379px;width: 70%;" >
 			
+
+			<div style="height: 100vh; background-color: #ffffff;"> 
 			<div style="background-color: #393836; height: 40px;">
 				<div class="collapse navbar-collapse navbar-ex1-collapse" >
 				<ul class="nav navbar-nav navbar-right" id='navmenu'>
@@ -179,7 +186,7 @@
 
 		</div>
 
-
+		</div>
 
 		
 	</div>
