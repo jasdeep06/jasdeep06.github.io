@@ -171,7 +171,7 @@ var promise=function(tree_html,blob_html)
     $.each(children,function(index1,value1){
 
       //var child = value1
-      var child_link_id=value1.id[value.id.length-1];
+      var child_link_id=value1.id.substring(8);;
     var child_text=$("a#"+child_link_id,'<div>'+tree_html + '</div>')[0].innerText;
     console.log(child_text);
     
