@@ -377,28 +377,51 @@ function init(obj) {
                        console.log(node.labels[0]);
                        console.log(node.properties.name);
 
+                       if(node.labels[0] == "Image"){
 
-                       var modal = document.getElementById('myModal');
+                          // var modal = document.getElementById('imgModal');
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-                      // var img = document.getElementById('myImg');
-                      var modalImg = document.getElementById("img01");
-                      // // var captionText = document.getElementById("caption");
-                      // img.onclick = function(){
-                          
-                      //     // captionText.innerHTML = this.alt;
-                      // }
+                          var modalImg = document.getElementById("img01");
+                     
 
-                      modal.style.display = "block";
-                      modalImg.src = node.properties.name;
-                      // Get the <span> element that closes the modal
-                      var span = document.getElementsByClassName("close")[0];
+                          // modal.style.display = "inline";
+                          modalImg.src = node.properties.name;
 
-                      // When the user clicks on <span> (x), close the modal
-                      span.onclick = function() { 
-                          modal.style.display = "none";
-                      }
+                          // var span = document.getElementsByClassName("close")[0];
 
+                      
+                          // span.onclick = function() { 
+                          // modal.style.display = "none";
+                          //         }
+
+                           $("#imgModal").modal("show");
+
+
+                        }
+
+                      if(node.labels[0] == "Video"){
+
+                        console.log(node.properties.name.split('&')[0]);
+
+                        var frst = node.properties.name.split('&')[0] + "?start=";
+                        var sec = node.properties.name.split('=')[1].slice(0,-1) + "&enablejsapi=1"
+                        console.log(frst + sec);
+                        //   var vidmodal = document.getElementById('vidModal');
+
+                        //   // var vid = document.getElementById("vid0");
+                        //   vidmodal.style.display = "inline";
+                        //   // vid.src = node.properties.name;
+                        //   var span = document.getElementsByClassName("close1")[0];
+                        //     span.onclick = function() { 
+                        //       vidmodal.style.display = "none";
+                        //           }
+
+                          var vid = document.getElementById("iframeYoutube");
+                          // slice(0,-1)
+                          vid.src = frst + sec ;
+                          $("#myModal").modal("show");
+
+                       }      
 
 
                   },
@@ -410,3 +433,5 @@ function init(obj) {
             }
 
             // window.onload = init;
+
+
