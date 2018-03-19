@@ -1,3 +1,10 @@
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
 .list-group-item{
 	background-color: #393836;
 	color: #fff;

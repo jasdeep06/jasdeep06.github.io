@@ -280,8 +280,8 @@ function server_call(obj){
 
 }).done(function( object ) {
 
-  console.log(JSON.stringify(object));
-
+  // console.log(JSON.stringify(object));
+  $("#exploader").hide();
   init(object);
     
 });
@@ -374,7 +374,57 @@ function init(obj) {
                         //         neo4jd3.updateWithD3Data(data);
                         //         break;
                         // }
-                    },
+                       console.log(node.labels[0]);
+                       console.log(node.properties.name);
+
+                       if(node.labels[0] == "Image"){
+
+                          // var modal = document.getElementById('imgModal');
+
+                          var modalImg = document.getElementById("img01");
+                     
+
+                          // modal.style.display = "inline";
+                          modalImg.src = node.properties.name;
+
+                          // var span = document.getElementsByClassName("close")[0];
+
+                      
+                          // span.onclick = function() { 
+                          // modal.style.display = "none";
+                          //         }
+
+                           $("#imgModal").modal("show");
+
+
+                        }
+
+                      if(node.labels[0] == "Video"){
+
+                        console.log(node.properties.name.split('&')[0]);
+
+                        var frst = node.properties.name.split('&')[0] + "?start=";
+                        var sec = node.properties.name.split('=')[1].slice(0,-1) + "&enablejsapi=1"
+                        console.log(frst + sec);
+                        //   var vidmodal = document.getElementById('vidModal');
+
+                        //   // var vid = document.getElementById("vid0");
+                        //   vidmodal.style.display = "inline";
+                        //   // vid.src = node.properties.name;
+                        //   var span = document.getElementsByClassName("close1")[0];
+                        //     span.onclick = function() { 
+                        //       vidmodal.style.display = "none";
+                        //           }
+
+                          var vid = document.getElementById("iframeYoutube");
+                          // slice(0,-1)
+                          vid.src = frst + sec ;
+                          $("#myModal").modal("show");
+
+                       }      
+
+
+                  },
                     onRelationshipDoubleClick: function(relationship) {
                         console.log('double click on relationship: ' + JSON.stringify(relationship));
                     },
@@ -383,3 +433,5 @@ function init(obj) {
             }
 
             // window.onload = init;
+
+

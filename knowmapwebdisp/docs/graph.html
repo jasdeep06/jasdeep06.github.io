@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	
-	
+	<link rel="stylesheet" type="text/css" href="css/graph.css">
 
 
         <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
@@ -115,13 +115,13 @@
 			<ul class="list-group" style="border-radius: 0; margin-top: 20px; ">
 				  <li class="list-group-item"  style="border-radius: 0; border: 0; border-top: 1px solid #585858; cursor: pointer;">DASHBOARD</li>
 				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" onclick="location.href='../explore.html#'">EXPLORE</li>
-				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" onclick="location.href='portal.html#'">YOUR BOOK</li>
+				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" onclick="location.href='../portal.html#'">YOUR BOOK</li>
 				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" >SHARED</li>
 				  <li class="list-group-item"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;">IMPORTANT</li>
 				  
 				  <li class="list-group-item" style="border-radius: 0; border: 0; border-top: 1px solid #585858; border-bottom: 1px solid #585858; cursor: pointer;">COMMUNITY</li>
 
-				  <li class="list-group-item activez" style="border-radius: 0; border: 0; border-top: 1px solid #585858; border-bottom: 1px solid #585858; cursor: pointer;">GRAPH</li>
+				 
 			</ul>
 		</div>
 		
@@ -130,7 +130,8 @@
 		
 
 
-<!-- <img id="exploader" src="../loader/eploreloader.gif" style="position: absolute;  margin:auto ; top: 40%; left: 50%;  "> -->
+<img id="exploader" src="../loader/eploreloader.gif" style="position: absolute;  margin:auto ; top: 40%; left: 50%;  ">
+
 
 
 <div id="neo4jd3" style="height: 600px; "></div>
@@ -153,7 +154,142 @@
 
 
 
-<!--  -->
+<!-- modal for image -->
+
+
+
+
+
+
+<div class="modal fade" id="imgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style=" box-shadow: 0; webkit-box-shadow : 0 ;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color: none;">
+      <div class="modal-body">
+      
+        <img  id="img01" width="560" height="315">
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- end -->
+
+
+<!-- modal for video -->
+<!-- <div id="vidModal" class="modal">
+  <span class="close1">&times;</span>
+  <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1">
+	</iframe>
+
+  
+</div> -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="box-shadow: 0; webkit-box-shadow : 0 ;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color: none;">
+      <div class="modal-body">
+      
+        <iframe id="iframeYoutube" width="560" height="315"   allowfullscreen></iframe> 
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- end here -->
+
+
+
+<script type="text/javascript">
+	function callPlayer(frame_id, func, args) {
+		
+    if (window.jQuery && frame_id instanceof jQuery) frame_id = frame_id.get(0).id;
+    var iframe = document.getElementById(frame_id);
+    if (iframe && iframe.tagName.toUpperCase() != 'IFRAME') {
+        iframe = iframe.getElementsByTagName('iframe')[0];
+    }
+
+    // When the player is not ready yet, add the event to a queue
+    // Each frame_id is associated with an own queue.
+    // Each queue has three possible states:
+    //  undefined = uninitialised / array = queue / 0 = ready
+    if (!callPlayer.queue) callPlayer.queue = {};
+    var queue = callPlayer.queue[frame_id],
+        domReady = document.readyState == 'complete';
+
+    if (domReady && !iframe) {
+        // DOM is ready and iframe does not exist. Log a message
+        window.console && console.log('callPlayer: Frame not found; id=' + frame_id);
+        if (queue) clearInterval(queue.poller);
+    } else if (func === 'listening') {
+        // Sending the "listener" message to the frame, to request status updates
+        if (iframe && iframe.contentWindow) {
+            func = '{"event":"listening","id":' + JSON.stringify(''+frame_id) + '}';
+            iframe.contentWindow.postMessage(func, '*');
+        }
+    } else if (!domReady ||
+               iframe && (!iframe.contentWindow || queue && !queue.ready) ||
+               (!queue || !queue.ready) && typeof func === 'function') {
+        if (!queue) queue = callPlayer.queue[frame_id] = [];
+        queue.push([func, args]);
+        if (!('poller' in queue)) {
+            // keep polling until the document and frame is ready
+            queue.poller = setInterval(function() {
+                callPlayer(frame_id, 'listening');
+            }, 250);
+            // Add a global "message" event listener, to catch status updates:
+            messageEvent(1, function runOnceReady(e) {
+                if (!iframe) {
+                    iframe = document.getElementById(frame_id);
+                    if (!iframe) return;
+                    if (iframe.tagName.toUpperCase() != 'IFRAME') {
+                        iframe = iframe.getElementsByTagName('iframe')[0];
+                        if (!iframe) return;
+                    }
+                }
+                if (e.source === iframe.contentWindow) {
+                    // Assume that the player is ready if we receive a
+                    // message from the iframe
+                    clearInterval(queue.poller);
+                    queue.ready = true;
+                    messageEvent(0, runOnceReady);
+                    // .. and release the queue:
+                    while (tmp = queue.shift()) {
+                        callPlayer(frame_id, tmp[0], tmp[1]);
+                    }
+                }
+            }, false);
+        }
+    } else if (iframe && iframe.contentWindow) {
+        // When a function is supplied, just call it (like "onYouTubePlayerReady")
+        if (func.call) return func();
+        // Frame exists, send message
+        iframe.contentWindow.postMessage(JSON.stringify({
+            "event": "command",
+            "func": func,
+            "args": args || [],
+            "id": frame_id
+        }), "*");
+    }
+    /* IE8 does not support addEventListener... */
+    function messageEvent(add, listener) {
+        var w3 = add ? window.addEventListener : window.removeEventListener;
+        w3 ?
+            w3('message', listener, !1)
+        :
+            (add ? window.attachEvent : window.detachEvent)('onmessage', listener);
+    }
+}
+
+
+
+	 $('#myModal').on('hidden.bs.modal', function () {
+	 	
+        callPlayer('iframeYoutube', 'stopVideo');
+    });
+</script>
 
 
 
@@ -173,8 +309,6 @@
           ga('send', 'pageview');
         </script>
  -->
-
-
 
 
 
