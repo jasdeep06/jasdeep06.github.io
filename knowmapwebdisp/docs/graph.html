@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	
-	
+	<link rel="stylesheet" type="text/css" href="css/graph.css">
 
 
         <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
@@ -115,13 +115,13 @@
 			<ul class="list-group" style="border-radius: 0; margin-top: 20px; ">
 				  <li class="list-group-item"  style="border-radius: 0; border: 0; border-top: 1px solid #585858; cursor: pointer;">DASHBOARD</li>
 				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" onclick="location.href='../explore.html#'">EXPLORE</li>
-				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" onclick="location.href='portal.html#'">YOUR BOOK</li>
+				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" onclick="location.href='../portal.html#'">YOUR BOOK</li>
 				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" >SHARED</li>
 				  <li class="list-group-item"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;">IMPORTANT</li>
 				  
 				  <li class="list-group-item" style="border-radius: 0; border: 0; border-top: 1px solid #585858; border-bottom: 1px solid #585858; cursor: pointer;">COMMUNITY</li>
 
-				  <li class="list-group-item activez" style="border-radius: 0; border: 0; border-top: 1px solid #585858; border-bottom: 1px solid #585858; cursor: pointer;">GRAPH</li>
+				 
 			</ul>
 		</div>
 		
@@ -130,7 +130,8 @@
 		
 
 
-<!-- <img id="exploader" src="../loader/eploreloader.gif" style="position: absolute;  margin:auto ; top: 40%; left: 50%;  "> -->
+<img id="exploader" src="../loader/eploreloader.gif" style="position: absolute;  margin:auto ; top: 40%; left: 50%;  ">
+
 
 
 <div id="neo4jd3" style="height: 600px; "></div>
@@ -156,6 +157,16 @@
 <!--  -->
 
 
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+
+
+
+
 
  <script src="js/d3.min.js"></script>
         <script src="js/neo4jd3.js?v=0.0.1"></script>
@@ -173,8 +184,6 @@
           ga('send', 'pageview');
         </script>
  -->
-
-
 
 
 
