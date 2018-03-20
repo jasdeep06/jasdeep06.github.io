@@ -1,6 +1,10 @@
 
 
 
+$('.toolbar a').click(function(e) {
+    document.execCommand($(this).data('command'), false, null);
+  });//end
+
 
 
 
