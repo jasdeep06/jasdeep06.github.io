@@ -23,6 +23,22 @@
 #bookload::-webkit-scrollbar { 
     display: none; 
 }
+
+
+.nbttn{
+    color: #efefef;
+    border-radius: 16px;
+    background-color: #4f4f4f;
+    /*border: 1px solid #fff; */
+    margin-right: 8px;
+    margin-top: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    padding-right: 12px;
+    padding-left: 12px;
+    cursor: pointer;
+  }
 </style>
 
 </head>
@@ -51,8 +67,7 @@
         
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" style=" color: #fff; background-color:#292929; ">Link</a></li>
-        
+       
 
 
 
@@ -68,7 +83,7 @@
         </li>
 
 
-        <li class="graphbttn " onclick="get_checkBox();"><!-- <img id="saveloader" src="loader/shadyloader.gif" style="display:none ;"  height="10px" width="10px"/> --> Graph</li>
+        <li class="nbttn  " onclick="get_checkBox();"><!-- <img id="saveloader" src="loader/shadyloader.gif" style="display:none ;"  height="10px" width="10px"/> --> Graph</li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -87,7 +102,7 @@
 
 				  <li class="list-group-item"  style="border-radius: 0; border: 0; border-top: 1px solid #585858; cursor: pointer;">DASHBOARD</li>
 
-				  <li class="list-group-item activez"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;">EXPLORE</li>
+				  <li class="list-group-item activez"  style="border: 0; color: #18aea3; border-top: 1px solid #585858; border-right: 5px solid #18aea3; cursor: pointer;">EXPLORE</li>
 				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" onclick="location.href='portal.html#'">YOUR BOOK</li>
 				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" >SHARED</li>
 				  <li class="list-group-item"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;">IMPORTANT</li>
