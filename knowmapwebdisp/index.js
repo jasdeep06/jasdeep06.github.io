@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+
 var url = "https://gentle-mesa-23788.herokuapp.com/webhook";
 var treerenderpointer = document.getElementById('treeload'); // id of dom element where tree is going to render
 var treenodid = '';
@@ -27,7 +39,15 @@ $.ajax({
     console.log(i);
     }   
 }).done(function( msg ) {
+  if(! msg.uid==localStorage.getItem("uid"))
+  {
+    $('#contentload div').attr("contenteditable",false);
+
+  }
+
     $('#loader').hide();
+    
+
     
     console.log(msg);
 });
@@ -323,3 +343,5 @@ function edittree(domid){
 
     }
 }
+
+
