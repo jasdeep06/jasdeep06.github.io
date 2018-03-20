@@ -64,7 +64,8 @@ function save_uid_and_redirect_user(email,uid)
 		localStorage.setItem("user_email",email)
 		localStorage.setItem("uid",uid)
 		var dest="https://jasdeep06.github.io/knowmapwebdisp/"+ destination
-    	window.open(dest)
+    	//window.open(dest)
+        window.location.href=dest
 
 
 
