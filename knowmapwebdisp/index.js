@@ -51,7 +51,7 @@ $.ajax({
 
     }else{
       console.log("editable")
-      $('#contentload div').attr("contenteditable",false);
+      $('#contentload div').attr("contenteditable",true);
     }
   }else{
     console.log("non editable 1")
