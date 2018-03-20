@@ -130,7 +130,7 @@ function render(email,link,heading,topic){
 
   bookload.innerHTML = bookload.innerHTML + `
   <div class="w3-card-4" style="width:23%;  margin: 10px;  display: inline-block;">
-    <header class="w3-container w3-light-grey">
+    <header class="w3-container ">
       <div class="checkbox checkbox-success">
         <input id="checkbox" email="`+email+`" value="`+trimtopic+`" type="checkbox" class="styled check" >
         <label style=" font-weight: 500; font-size:15px;" >

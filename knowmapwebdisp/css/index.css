@@ -43,7 +43,7 @@
 	}
 	.sections{
 		margin-top: 5px;
-		 padding: 6px 12px 17px 12px;
+		 padding: 17px 12px 17px 12px;
 		 text-align: justify;
 	}
 
@@ -91,3 +91,18 @@
  
 
 }
+
+
+.nbttn{
+		color: #efefef;
+		border-radius: 16px;
+		background-color: #4f4f4f;
+		/*border: 1px solid #fff; */
+		margin-right: 8px;
+		margin-top: 10px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+
+		padding-right: 12px;
+		padding-left: 12px;
+	}

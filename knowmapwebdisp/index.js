@@ -28,6 +28,8 @@ $.ajax({
     }   
 }).done(function( msg ) {
     $('#loader').hide();
+    $('#contentload div').attr("contenteditable",false);
+
     
     console.log(msg);
 });
@@ -323,3 +325,5 @@ function edittree(domid){
 
     }
 }
+
+
