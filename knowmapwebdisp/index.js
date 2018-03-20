@@ -39,7 +39,8 @@ $.ajax({
     console.log(i);
     }   
 }).done(function( msg ) {
-  console.log(msg.uid)
+
+
   console.log(localStorage.getItem("uid"))
   if(localStorage.getItem("uid"))
   {
