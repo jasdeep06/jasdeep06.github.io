@@ -52,15 +52,20 @@ $.ajax({
     {
       console.log("non editable")
       $('#contentload div').attr("contenteditable",false);
+     
 
     }else{
       console.log("editable")
       $('#contentload div').attr("contenteditable",true);
+
+       $(".navy").hide();
+      $(".navz").show();
     }
   }else{
     console.log("non editable 1")
 
     $('#contentload div').attr("contenteditable",false);
+  
 
   }
 
