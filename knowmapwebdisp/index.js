@@ -40,7 +40,7 @@ $.ajax({
     }   
 }).done(function( msg ) {
 
-
+  console.log(msg.uid)
   console.log(localStorage.getItem("uid"))
   if(localStorage.getItem("uid"))
   {
@@ -51,6 +51,7 @@ $.ajax({
 
     }
   }else{
+    console.log("non editable 1")
 
     $('#contentload div').attr("contenteditable",false);
 
