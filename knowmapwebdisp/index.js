@@ -49,6 +49,9 @@ $.ajax({
       console.log("non editable")
       $('#contentload div').attr("contenteditable",false);
 
+    }else{
+      console.log("editable")
+      $('#contentload div').attr("contenteditable",false);
     }
   }else{
     console.log("non editable 1")
