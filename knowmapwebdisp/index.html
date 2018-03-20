@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KnowMap</title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+	<script src="js/jquery.loading.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+	
+<style type="text/css">
+	*{
+		font-family:  'Roboto', sans-serif;
+	}
+
+	.toolbar{
+		cursor: pointer;
+	}
+	/*.sections{
+		margin-top: 5px;
+		 padding: 6px 12px 17px 12px;
+		 text-align: justify;
+	}
+
+	.bttn{
+		color: #17acf4;
+		border-radius: 0;
+		border: 1px solid #17acf4; 
+		margin-right: 8px;
+		margin-top: 10px;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	a:hover{
+  
+  text-decoration:  none;
+
+}*/
+</style>
+
+</head>
+<body style="background-color: #e5e5e5;">
+
+<nav class="navbar navbar-fixed-top" style="background-color:#292929; border-radius: 0; margin-bottom: 0;">
+ 	 <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="font-family: 'Pacifico', cursive; color: #fff; background-color:#393836; ">KnowMap</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" style=" color: #fff; background-color:#292929; ">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style=" cursive; color: #fff; background-color:#292929; ">@username<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<div class="container-fluid" >
+	<div class="row">
+		<div class="col-lg-1" style=" padding-left: 0; padding-right: 0; background-color: #393836; height: 100vh; width: 117px; position: fixed;">
+			
+			<!-- sidestbar -->
+			
+
+			<ul class="list-group" style="border-radius: 0; margin-top: 60px; ">
+
+				  <li class="list-group-item"  style="border-radius: 0; border: 0; border-top: 1px solid #585858; cursor: pointer;">DASHBOARD</li>
+				  <li class="list-group-item"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;"  onclick="location.href='explore.html#'">EXPLORE</li>
+				  <li class="list-group-item activez"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" >YOUR BOOK</li>
+				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" >SHARED</li>
+				  <li class="list-group-item"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;">IMPORTANT</li>
+				  
+				  <li class="list-group-item" style="border-radius: 0; border: 0; border-top: 1px solid #585858; border-bottom: 1px solid #585858; cursor: pointer;">COMMUNITY</li>
+			</ul>
+		</div>
+		
+
+		<!-- tree -->
+
+		<div class="col-lg-2" style="  margin-right: 19px; margin-left: 19px;  padding-left: 0; padding-right: 0; padding-top:  60px; position: fixed;    left: 116px;" >
+
+			<div style="background-color: #292929; height: 100vh; ">
+
+				<div style="background-color: #393836; height: 40px; color: #fff;     padding-top: 11px; padding-left: 17px; font-size: 15px; font-weight: 600">
+				KnowBook	
+					 
+				</div>
+				
+
+				<div  id="treeload" style="width:100%; height: 600px; overflow: scroll;  margin-top: 10px;">
+
+
+	            </div>
+
+            </div>
+
+		</div>
+
+
+
+
+		<!-- content -->
+		
+		<div class="col-lg-8" style="   padding-left: 0; padding-right: 0;  padding-top: 60px;position: fixed; left: 379px;width: 70%;" >
+			
+
+			<div style="height: 100vh; background-color: #ffffff;"> 
+			<div style="background-color: #393836; height: 40px;">
+				<div class="collapse navbar-collapse navbar-ex1-collapse" >
+				<ul class="nav navbar-nav navbar-right" id='navmenu'>
+
+						
+
+					<li class="savebttn toolbar" id="save"><img id="saveloader" src="loader/shadyloader.gif" style="display:none ;"  height="10px" width="10px"/> <i class="fa fa-floppy-o" aria-hidden="true"></i> save and sync</li>
+
+					<li class="bttn toolbar" ><a href="javascript:;" style="padding: 0; color: #fff;" data-command='bold'><i class='fa fa-bold'></i></a></li>
+
+					<li class="bttn toolbar"><a href="javascript:;" style="padding: 0; color: #fff;" data-command='italic'><i class='fa fa-italic'></i></a></li>
+
+					<li class="bttn toolbar"><a href="javascript:;" style="padding: 0; color: #fff;" data-command='underline'><i class='fa fa-underline'></i></a></li>
+
+					<li class="bttn toolbar"><a href="javascript:;" style="padding: 0; color: #fff;" data-command='justifyLeft'><i class='fa fa-align-left'></i></a></li>
+
+					<li class="bttn toolbar"><a href="javascript:;" style="padding: 0; color: #fff;" data-command='justifyCenter'><i class='fa fa-align-center'></i></a>
+					</li>
+
+
+					<li class="bttn toolbar"><a href="javascript:;" style="padding: 0; color: #fff;" data-command='justifyRight'><i class='fa fa-align-right'></i></a></li>
+
+					<li class="bttn toolbar"><a href="javascript:;" style="padding: 0; color: #fff;" data-command='insertUnorderedList'><i class='fa fa-list-ul'></i></a></li>
+
+					<li class="bttn toolbar"><a href="javascript:;" style="padding: 0; color: #fff;" data-command='insertOrderedList'><i class='fa fa-list-ol'></i></a></li>
+
+
+					
+
+					<li class="clearbttn toolbar" id="clear"><i class="fa fa-eraser" aria-hidden="true" ></i> clear</li>
+					<li class="clearbttn toolbar" id="restore"><i class="fa fa-eraser" aria-hidden="true" ></i> Restore in extension</li>
+				</ul>
+			</div>
+
+	
+
+				
+			</div>
+			
+			<img id="loader" src="loader/ajax-loader.gif" style="position: absolute;  margin:auto ; display:none ; top: 40%; left: 40%;  ">
+			<div  id="contentload" style="width:100%; height: 600px; overflow: scroll; ">
+				
+
+
+            </div>
+
+		</div>
+
+		</div>
+
+		
+	</div>
+	
+</div>
+
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sub-Topic</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" id="child"  placeholder="topic name">
+      </div>
+      <div class="modal-footer">
+        <button id='childbtn' type="button" class="btn btn-default" data-dismiss="modal">submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="index.js"></script>
+
+
+
+</body>
+</html>
