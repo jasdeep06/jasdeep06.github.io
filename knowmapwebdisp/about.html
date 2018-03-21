@@ -36,7 +36,7 @@
         <div class="text-vertical-center">
 
         	<h3   style="font-family: 'Pacifico', cursive; color: #fff; background-color:#393836; padding: 8px; display: inherit;">KnowMap</h3>
-            <h1 id="name">WELCOME </h1>
+            <h2 id="name">WELCOME </h2>
             <h3 id="slogan">map your knowledge!</h3>
             
             
@@ -47,7 +47,7 @@
   <script type="text/javascript">
   	if(localStorage.getItem("user_email")){
   		var user = localStorage.getItem("user_email");
-  		document.getElementById("name").innerHTML = "WELCOME " + user.split('@')[0] ;
+  		document.getElementById("name").innerHTML = "WELCOME " + user.split('@')[0].toUpperCase() ;
 
   	}
   	else{
