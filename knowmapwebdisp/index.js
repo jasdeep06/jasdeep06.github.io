@@ -132,6 +132,7 @@ $('#save').click(function(e) {
 
 $('#restore').click(function(e) {
     console.log("clicked")
+    $("#restoreloader").show();
     check_active_status_from_mongo(set_restore_flag_in_mongo)
 
 
@@ -159,6 +160,7 @@ function set_restore_flag_in_mongo()
     data: JSON.stringify( object ),
     contentType: "application/json"
 }).done(function( msg ) {
+    $("#restoreloader").hide();
     
     console.log(msg);
 });
