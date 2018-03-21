@@ -53,7 +53,9 @@ $('#exploader').hide();
       bookloader(object,intros,render);
    }
    else{
+      $("#signin_text").css("display","block");
     $("#signin_text").html("You have not created<br/> any KnowBook");
+
    }
 
    
