@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KnowMap</title>
+	 <link href="css/bootstrap.min.css" rel="stylesheet">
+	 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+	 <style type="text/css">
+	 	*{
+	 		 font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+	 	}
+
+	 	html,
+
+
+	 	.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+}
+#top{
+	margin-top: 15%;
+}
+	 </style>
+</head>
+<body>
+<header id="top" class="header">
+	<center>
+        <div class="text-vertical-center">
+
+        	<a class="navbar-brand" href="#" style="font-family: 'Pacifico', cursive; color: #fff; background-color:#393836; ">KnowMap</a>
+            <h1 id="name">WELCOME </h1>
+            <h3 id="slogan">backchodi slogan</h3>
+            
+            
+        </div>
+        </center>
+    </header>
+
+  <script type="text/javascript">
+  	if(localStorage.getItem("user_email")){
+  		var user = localStorage.getItem("user_email");
+  		document.getElementById("name").innerHTML = "WELCOME" + user.split('@')[0] ;
+
+  	}
+  	else{
+  		 document.getElementById("name").innerHTML = "Oops!!";
+  		 document.getElementById("slogan").innerHTML = "";
+
+  	}
+  	
+  </script>  
+</body>
+</html>
