@@ -182,6 +182,7 @@ function check_active_status_from_mongo(callback)
     
     contentType: "application/json"
 }).done(function(active_object){
+  console.log(active_object)
 
   if(active_object.length!=0)
   {
