@@ -24,7 +24,7 @@ function email(email){
   console.log(email);
   get_from_mongo(email);
   $('#exploader').show();
-  return false;
+  
 }
 
 
