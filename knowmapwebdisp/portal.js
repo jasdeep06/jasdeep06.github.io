@@ -53,7 +53,7 @@ $('#exploader').hide();
       bookloader(object,intros,render);
    }
    else{
-   alert("You had to do one thing, and you screwed that too!!");
+    $("#signin_text").html("You have not created<br/> any KnowBook");
    }
 
    
