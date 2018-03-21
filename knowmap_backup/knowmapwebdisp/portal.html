@@ -47,7 +47,7 @@
 </head>
 <body style="background-color: #e5e5e5;">
 
-<nav class="navbar " style="background-color:#292929; border-radius: 0; margin-bottom: 0;">
+<nav class="navbar navbar-fixed-top" style="background-color:#292929; border-radius: 0; margin-bottom: 0;">
  	 <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -90,12 +90,14 @@
 
 <div class="container-fluid" >
 	<div class="row">
-		<div class="col-lg-1" style=" padding-left: 0; padding-right: 0; background-color: #393836; height: 93vh; width: 117px;">
+		<div class="col-lg-1" style=" padding-left: 0; padding-right: 0; background-color: #393836; height: 100vh; width: 117px;">
 			
 			<!-- sidestbar -->
 			
 
-			<ul class="list-group" style="border-radius: 0; margin-top: 20px; ">
+			<ul class="list-group" style="border-radius: 0; margin-top: 60px; ">
+
+
 				  <li class="list-group-item"  style="border-radius: 0; border: 0; border-top: 1px solid #585858; cursor: pointer;">DASHBOARD</li>
 				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" onclick="location.href='explore.html#'">EXPLORE</li>
 				  <li class="list-group-item activez"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;">YOUR BOOK</li>
@@ -108,27 +110,26 @@
 		
 
 <div class="col-lg-10 col-sm-10 col-md-10" style=" width: 90.333333%;">
+
+		<!-- <center>
+		<div style=""> -->
+			 <!-- <div class="form-group mx-lg-5 mb-2"> -->
+		    
+		<!--     <input type="text" class="form-control" id="emailid" placeholder="email" style="    display: inline; width: 79%;">
+		 
+		  <button type="submit" class="btn btn-primary mb-2" onclick =" email()" >Confirm identity</button>
+		</div>
+
+		</center> -->
+
+		<img id="exploader" src="loader/eploreloader.gif" style="position: absolute;  margin:auto ; display: none; top: 40%; left: 50%;  ">
+
+		<div id="bookload" style="height: 100vh; overflow: scroll; padding-top: 60px;"></div>
+				
+
+
 		
-<center>
-<div style="margin-top: 10px;">
-	 <!-- <div class="form-group mx-lg-5 mb-2"> -->
-    
-    <input type="text" class="form-control" id="emailid" placeholder="email" style="    display: inline; width: 79%;">
-  <!-- </div> -->
-  <button type="submit" class="btn btn-primary mb-2" onclick =" email()" >Confirm identity</button>
 </div>
-
-</center>
-
-<img id="exploader" src="loader/eploreloader.gif" style="position: absolute;  margin:auto ; display: none; top: 40%; left: 50%;  ">
-
-<div id="bookload" style="height: 93vh; overflow: scroll; "></div>
-		
-
-
-		
-
-	</div>
 		
 
 

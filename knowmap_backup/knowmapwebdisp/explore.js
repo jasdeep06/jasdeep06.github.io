@@ -1,3 +1,6 @@
+// $('body').addClass('stop-scrolling');
+
+
 var bookload = document.getElementById('bookload');
 
 
@@ -108,13 +111,33 @@ function render(email,link,heading,topic){
   //     head  = head + space; 
   //   }
   // }
+/*
+<div class="checkbox checkbox-warning">
+                        <input id="check2" type="checkbox" class="styled" checked>
+                        <label for="check2">
+                            Style 2
+                        </label>
+                    </div>
 
-  console.log(head);
+<input type="checkbox" value="" style="">
+      <h4 style="font-weight: 500; display:inline-block">`+topic+`</h4 >
+
+
+
+*/
+  var trimtopic = topic.split('&nbsp;').join('').split(' ').join('')
+
 
   bookload.innerHTML = bookload.innerHTML + `
-  <div class="w3-card-4" style="width:23%;  margin: 10px; display: inline-block;">
+  <div class="w3-card-4" style="width:23%;  margin: 10px;  display: inline-block;">
     <header class="w3-container w3-light-grey">
-      <h4 style="font-weight: 500">`+topic+`</h4 >
+      <div class="checkbox checkbox-success">
+        <input id="checkbox" email="`+email+`" value="`+trimtopic+`" type="checkbox" class="styled check" >
+        <label style=" font-weight: 500; font-size:15px;" >
+            `+topic.split('&nbsp;').join('')+`               
+         </label>
+      </div>
+      
     </header>
 
 
@@ -131,5 +154,43 @@ function render(email,link,heading,topic){
   </div>
 
 `
+
+}
+
+
+
+
+function get_checkBox(){
+     var val = "";
+     var test ;
+        $('.check:checked').each(function(i){4
+
+
+          // val = val + '{"'+ $(this).attr("email")+ '":"'+$(this).attr("email") +'" },';
+          val = val + `"`+$(this).attr("email") + $(this).attr("value") +`",`;
+         
+          // test[$(this).attr("email")] = $(this).attr("value")
+
+        });
+
+        
+
+         // console.log("{" + val.slice(0,-1) + "}");
+        // console.log(JSON.stringify(test))
+        
+          
+
+        if(val != "" ){
+
+        test = "[" + val.slice(0,-1) + "]" ;
+
+        // console.log(JSON.parse(test));
+        sessionStorage.setItem('data',test);
+
+        window.open("docs/graph.html","_self");
+
+        }else{
+          return false;
+        }
 
 }
