@@ -58,8 +58,11 @@ $.ajax({
       console.log("editable")
       $('#contentload div').attr("contenteditable",true);
 
+
        $(".navy").hide();
       $(".navz").show();
+
+      $("#restore").attr("reference",String(msg.heading))
     }
   }else{
     console.log("non editable 1")
@@ -129,7 +132,7 @@ $('#save').click(function(e) {
 
 $('#restore').click(function(e) {
     console.log("clicked")
-    set_restore_flag_in_mongo()
+    check_active_status_from_mongo(set_restore_flag_in_mongo)
 
 
     //get_tree_and_blob_html(1,send_to_mongo);
@@ -145,7 +148,7 @@ function set_restore_flag_in_mongo()
 {   
 
   object={"$set":{'restore':"yes"}}
-    query="{'head':'"+String(window.location.hash.substring(1)) +"'}"
+    query="{'head':'"+ $("#restore").attr("reference") +"'}"
     console.log(query)
     console.log("https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+query)
     $.ajax({
@@ -163,6 +166,45 @@ function set_restore_flag_in_mongo()
 
 
 }
+
+
+function check_active_status_from_mongo(callback)
+{
+
+  uid=localStorage.getItem("uid")
+
+   query="{'uid':'"+String(uid) +"','active_now':'yes'}"
+    $.ajax({
+
+    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+query,
+
+    type: "GET",
+    
+    contentType: "application/json"
+}).done(function(active_object){
+
+  if(active_object.length!=0)
+  {
+
+    
+
+      $('#activeWarn').modal('show')
+
+
+    
+    
+
+  }else
+  {
+
+    callback()
+
+  }
+
+})
+}
+
+
 
 
 
