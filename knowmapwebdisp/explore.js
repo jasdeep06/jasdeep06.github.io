@@ -3,8 +3,14 @@
 
 var bookload = document.getElementById('bookload');
 
+if(localStorage.getItem("user_email")){
 
+$("#username").text(localStorage.getItem("user_email").split('@')[0]);
 
+}
+else{
+  $("#username").text("Guest");
+}
 
 function get_from_mongo()
 {
