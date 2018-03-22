@@ -437,7 +437,7 @@ function init(obj) {
 $("#search").bind('keyup', function (e) {
     if (e.keyCode == 13) {
 
-      // e.preventDefault();
+      e.preventDefault();
 
       console.log("awewcehvieviuehvi uevu");
 
