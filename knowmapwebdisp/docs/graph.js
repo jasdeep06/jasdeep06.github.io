@@ -434,10 +434,10 @@ function init(obj) {
 
             // window.onload = init;
 
-$("#search").on('keyup', function (e) {
+$("#search").bind('keyup', function (e) {
     if (e.keyCode == 13) {
 
-      e.preventDefault();
+      // e.preventDefault();
 
       console.log("awewcehvieviuehvi uevu");
 
