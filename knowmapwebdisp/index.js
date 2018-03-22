@@ -7,7 +7,14 @@ $('.toolbar a').click(function(e) {
 
 
 
+if(localStorage.getItem("user_email")){
 
+$("#username").text(localStorage.getItem("user_email").split('@')[0]);
+
+}
+else{
+  $("#username").text("Guest");
+}
 
 
 

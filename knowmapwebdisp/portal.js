@@ -1,11 +1,30 @@
 var bookload = document.getElementById('bookload');
 
-function email(){ 
- var email =   $('#emailid').val();
+
+if(localStorage.getItem("user_email")){
+
+$("#username").text(localStorage.getItem("user_email").split('@')[0]);
+
+email(localStorage.getItem("user_email"));
+
+}
+else{
+  $("#username").text("Guest");
+
+  $("#signin_text").css("display","block");
+
+
+}
+
+
+
+
+function email(email){ 
+
   console.log(email);
   get_from_mongo(email);
   $('#exploader').show();
-  return false;
+  
 }
 
 
@@ -34,7 +53,9 @@ $('#exploader').hide();
       bookloader(object,intros,render);
    }
    else{
-   alert("You had to do one thing, and you screwed that too!!");
+      $("#signin_text").css("display","block");
+    $("#signin_text").html("You have not created<br/> any KnowBook");
+
    }
 
    
