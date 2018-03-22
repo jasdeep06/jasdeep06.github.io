@@ -437,6 +437,10 @@ function init(obj) {
 $("#search").on('keyup', function (e) {
     if (e.keyCode == 13) {
 
+      e.preventDefault();
+
+      console.log("awewcehvieviuehvi uevu");
+
       server_call($("#search").val())
 
 
