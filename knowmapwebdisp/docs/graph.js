@@ -442,7 +442,7 @@ $("#search").keypress(function (e) {
 
       console.log("awewcehvieviuehvi uevu");
 
-      server_call($("#search").val())
+      server_call({"string":$("#search").val()})
 
 
         // Do something
