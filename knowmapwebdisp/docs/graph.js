@@ -434,8 +434,9 @@ function init(obj) {
 
             // window.onload = init;
 
-$("#search").bind('keyup', function (e) {
-    if (e.keyCode == 13) {
+$("#search").keypress(function (e) {
+  
+    if (e.which == 13) {
 
       e.preventDefault();
 
@@ -446,5 +447,6 @@ $("#search").bind('keyup', function (e) {
 
         // Do something
     }
+
 });
 
