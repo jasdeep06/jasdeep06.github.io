@@ -434,4 +434,13 @@ function init(obj) {
 
             // window.onload = init;
 
+$("#search").on('keyup', function (e) {
+    if (e.keyCode == 13) {
+
+      server_call($("#search").val())
+
+
+        // Do something
+    }
+});
 
