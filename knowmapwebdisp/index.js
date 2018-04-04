@@ -29,7 +29,7 @@ var i; //id
 var previousid;// for parent or child
 
 
-
+/*
 
 function get_data(){
 $('#loader').show();
@@ -86,6 +86,69 @@ $.ajax({
     console.log(msg);
 });
 }
+*/
+
+
+function get_data(){
+$('#loader').show();
+query="{'head':"+String(window.location.hash.substring(1))+"}"
+
+$.ajax({
+
+    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+query,
+
+    type: "GET",
+    
+    contentType: "application/json"
+
+    success: function( data ) { 
+        console.log(  data );
+        //myJson=data.json()
+        $("#contentload").html(data[0].html);
+    $("#treeload").html(data[0].tree);
+
+    i = data[0].finali;
+    console.log(i);
+    }   
+}).done(function( msg ) {
+
+  console.log(msg[0].uid)
+  console.log(localStorage.getItem("uid"))
+  if(localStorage.getItem("uid"))
+  {
+    if(msg[0].uid != localStorage.getItem("uid"))
+    {
+      $('#contentload div').attr("contenteditable",false);
+     
+
+    }else{
+      $('#contentload div').attr("contenteditable",true);
+
+
+       $(".navy").hide();
+      $(".navz").show();
+
+      $("#restore").attr("reference",String(msg[0].head))
+    }
+  }else{
+
+    $('#contentload div').attr("contenteditable",false);
+  
+
+  }
+
+    $('#loader').hide();
+    
+
+    
+    console.log(msg);
+});
+}
+
+
+
+
+
 
 
  get_data()
