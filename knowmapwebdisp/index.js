@@ -91,7 +91,8 @@ $.ajax({
 
 function get_data(){
 $('#loader').show();
-query="{'head':"+String(window.location.hash.substring(1))+"}"
+query="{'head':"+"'"+String(window.location.hash.substring(1))+"'}"
+console.log(query)
 
 $.ajax({
 
