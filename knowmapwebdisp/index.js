@@ -99,7 +99,7 @@ $.ajax({
 
     type: "GET",
     
-    contentType: "application/json"
+    contentType: "application/json",
 
     success: function( data ) { 
         console.log(  data );
