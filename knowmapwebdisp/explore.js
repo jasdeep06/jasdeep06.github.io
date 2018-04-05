@@ -16,12 +16,12 @@ function get_from_mongo()
 {
   console.log("calling")
     
-    // query="{'email':'"+String(email) +"'}"
+    query="{'real':'yes'}"
     // console.log(query)
     console.log("https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B")
     $.ajax({
 
-    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B",
+    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+ query,
 
     type: "GET",
     contentType: "application/json"
