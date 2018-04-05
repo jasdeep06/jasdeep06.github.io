@@ -259,7 +259,7 @@ function check_active_status_from_mongo(callback)
 
   uid=localStorage.getItem("uid")
 
-   query="{'uid':'"+String(uid) +"','active_status':'yes','real':'yes'}"
+   query="{'uid':'"+String(uid) +"','active_status':'yes'}"
     $.ajax({
 
     url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+query,
