@@ -139,10 +139,23 @@ $.ajax({
   }
 
     $('#loader').hide();
-    
+
 
     
-    console.log(msg);
+    //image popup
+      $( "#contentload div img" ).bind( "click", function( event ) {
+
+        // console.log("asdddve",this.getAttribute("src"));
+
+         var modalImg = document.getElementById("img01");
+
+         modalImg.src =this.getAttribute("src");
+
+         $("#imgModal").modal("show");
+      } );
+
+    
+  
 });
 }
 
@@ -485,3 +498,9 @@ function edittree(domid){
 }
 
 
+
+
+// $( "#contentload div img" ).bind( "click", function( event ) {
+
+//   console.log("asdddve");
+// } );

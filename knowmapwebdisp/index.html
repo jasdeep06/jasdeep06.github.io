@@ -6,7 +6,7 @@
 
 	<script src="js/jquery.loading.js"></script>
 
-
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
@@ -26,26 +26,7 @@
 	[contenteditable]:focus {
   					  outline: 0px solid transparent;
 					}
-	/*.sections{
-		margin-top: 5px;
-		 padding: 6px 12px 17px 12px;
-		 text-align: justify;
-	}
-
-	.bttn{
-		color: #17acf4;
-		border-radius: 0;
-		border: 1px solid #17acf4; 
-		margin-right: 8px;
-		margin-top: 10px;
-		padding-right: 5px;
-		padding-left: 5px;
-	}
-	a:hover{
-  
-  text-decoration:  none;
-
-}*/
+	
 </style>
 
 </head>
@@ -76,7 +57,7 @@
       <ul class="nav navbar-nav navbar-right">
         
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style=" cursive; color: #fff; background-color:#292929; " id="username"><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="  color: #fff; background-color:#292929; " id="username"><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -138,7 +119,7 @@
 
 		<!-- content -->
 		
-		<div class="col-lg-8" style="   padding-left: 0; padding-right: 0;  padding-top: 60px;position: fixed; left: 379px;width: 70%;" >
+		<div class="col-lg-8" style="   padding-left: 0; padding-right: 0;  padding-top: 60px; position: fixed; left: 400px; width: 70%;" >
 			
 
 			<div style="height: 100vh; background-color: #ffffff;"> 
@@ -186,7 +167,7 @@
 			</div>
 			
 			<img id="loader" src="loader/ajax-loader.gif" style="position: absolute;  margin:auto ; display:none ; top: 40%; left: 40%;  ">
-			<div  id="contentload" style="width:100%; height: 600px; overflow: scroll; background-color: #f7f7f7;     padding: 0 20px;">
+			<div  id="contentload" style="width:100%; height: 100vh; overflow: scroll; background-color: #f7f7f7;     padding: 0 20px;">
 				
 
 
@@ -237,6 +218,41 @@
 
   </div>
 </div>
+
+
+<!-- modal for image -->
+
+
+<div class="modal fade" id="imgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style=" box-shadow: 0; webkit-box-shadow : 0 ;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color: none;">
+      <div class="modal-body">
+      
+        <img  id="img01" width="560" height="315">
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- end -->
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="box-shadow: 0; webkit-box-shadow : 0 ;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color: none;">
+      <div class="modal-body">
+      
+        <iframe id="iframeYoutube" width="560" height="315"   allowfullscreen></iframe> 
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- end here -->	
 
 
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
