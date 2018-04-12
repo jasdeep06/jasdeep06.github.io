@@ -14,6 +14,7 @@ else{
 
 function get_from_mongo()
 {
+  
   console.log("calling")
     
     query="{'real':'yes'}"
@@ -21,19 +22,21 @@ function get_from_mongo()
     console.log("https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B")
     $.ajax({
 
-    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+ query,
+    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?f={'email':1,'topic_heading':1,'head':1}&apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+ query,
 
     type: "GET",
     contentType: "application/json"
 }).done(function( object ) {
 
  $('#exploader').hide();
-   var intros=get_intros(object)
-   console.log(intros)
+   //var intros=get_intros(object)
+   console.log(object)
 
-   bookloader(object,intros,render);
+   bookloader(object,render);
     
 });
+
+      
 
 }
 
@@ -92,23 +95,25 @@ get_from_mongo();
 
 
 
-function bookloader(obj,intros,callback){
+function bookloader(obj,callback){
 
 
   for (var i = 0; i < obj.length; i++) {
-    console.log(intros[0][i]);
+    // console.log(intros[0][i]);
     var email = obj[i].email;
     var head = obj[i].head;
+    var topic_name = obj[i].topic_heading;
 
-    callback(email,head,intros[0][i],intros[1][i]);
+
+    callback(email,head,topic_name);
   }
 
 }
 
 
-function render(email,link,heading,topic){
+function render(email,link,topic_name){
 
-  var head = heading.substring(0,100);
+  // var head = heading.substring(0,100);
   // console.log(head.length);
   // initial_length=head.length
   // if(head.length< 100){
@@ -131,7 +136,7 @@ function render(email,link,heading,topic){
 
 
 */
-  var trimtopic = topic.split('&nbsp;').join('').split(' ').join('')
+  var trimtopic = topic_name.split('&nbsp;').join('').split(' ').join('')
 
 
   bookload.innerHTML = bookload.innerHTML + `
@@ -140,7 +145,7 @@ function render(email,link,heading,topic){
       <div class="checkbox checkbox-success">
         <input id="checkbox" email="`+email+`" value="`+trimtopic+`" type="checkbox" class="styled check" >
         <label style=" font-weight: 500; font-size:15px;" >
-            `+topic.split('&nbsp;').join('')+`               
+            `+topic_name.split('&nbsp;').join('')+`               
          </label>
       </div>
       
@@ -151,7 +156,10 @@ function render(email,link,heading,topic){
 
     <p style="text-align: left; margin-top:10px; overflow:hidden;">
    
-     `+head+`
+     Created on : xx/xx/xxxx<br/>
+     Views : xxx<br/>
+     Rating: xxx
+
     </p>  
      <p>By @`+email.split('@')[0]+`</p>
       
