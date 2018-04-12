@@ -441,8 +441,9 @@ function section(id, treeid , value){
 
         
         // creating other section
-        $( "<h6><a name='"+id+"'></a></h6><span id='"+ id+"zz' class='glyphicon glyphicon-arrow-right' style = 'margin-top: 17px;'></span><h4 style = 'font-weight: 500; display:inline;' id='"+ id+"zzz' >"+ value+":-</h4><div class='sections' id='"+ id+"z'  style= 'background-color : #efefef;' contenteditable></div> " ).insertAfter( parentid);
-       
+        //$( "<h6><a name='"+id+"'></a></h6><span id='"+ id+"zz' class='glyphicon glyphicon-arrow-right' style = 'margin-top: 17px;'></span><h4 style = 'font-weight: 500; display:inline;' id='"+ id+"zzz' >"+ value+":-</h4><div class='sections' id='"+ id+"z'  style= 'background-color : #efefef;' contenteditable></div> " ).insertAfter( parentid);
+               $( "<h6 style='margin-top : 21px'><a name='"+id+"'></a></h6><center><h2 style = 'font-weight: 500; display:inline;' id='"+ id+"zzz' >"+ value+"</h2></center><div class='sections' id='"+ id+"z'  style= 'background-color : #efefef;  border-radius: 15px;' contenteditable></div> " ).insertAfter( parentid);
+
     
     // previousid = id ; // keeping track for first or other section
 
