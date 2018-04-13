@@ -22,7 +22,7 @@ function get_from_mongo()
     console.log("https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B")
     $.ajax({
 
-    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?f={'email':1,'topic_heading':1,'head':1}&apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+ query,
+    url: "https://api.mongolab.com/api/1/databases/knowmap/collections/know_html?f={'email':1,'topic_heading':1,'head':1,'date':1}&apiKey=AdXhK_FZvkVq_6OZfgJKyANr_ZGSck_B&q="+ query,
 
     type: "GET",
     contentType: "application/json"
@@ -103,15 +103,16 @@ function bookloader(obj,callback){
     var email = obj[i].email;
     var head = obj[i].head;
     var topic_name = obj[i].topic_heading;
+    var date=obj[i].date;
 
 
-    callback(email,head,topic_name);
+    callback(email,head,topic_name,date);
   }
 
 }
 
 
-function render(email,link,topic_name){
+function render(email,link,topic_name,date){
 
   // var head = heading.substring(0,100);
   // console.log(head.length);
@@ -156,7 +157,7 @@ function render(email,link,topic_name){
 
     <p style="text-align: left; margin-top:10px; overflow:hidden;">
    
-     Created on : xx/xx/xxxx<br/>
+     Modified on : `+date+`<br/>
      Views : xxx<br/>
      Rating: xxx
 
