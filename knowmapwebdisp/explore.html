@@ -1,182 +1,149 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>KnowMap</title>
-		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-
-	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/build.css">
-
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">	
-<style type="text/css">
-	*{
-		font-family:  'Roboto', sans-serif;
-	}
-	
-
-#bookload::-webkit-scrollbar { 
-    display: none; 
-}
-
-
-.nbttn{
-    color: #efefef;
-    border-radius: 16px;
-    background-color: #4f4f4f;
-    /*border: 1px solid #fff; */
-    margin-right: 8px;
-    margin-top: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-
-    padding-right: 12px;
-    padding-left: 12px;
-    cursor: pointer;
-  }
-</style>
-
-</head>
-<body style="background-color: #e5e5e5; ">
-
-<nav class="navbar navbar-fixed-top" style="background-color:#292929; border-radius: 0; margin-bottom: 0;">
- 	 <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#" style="font-family: 'Pacifico', cursive; color: #fff; background-color:#393836; ">KnowMap</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-       
-
-<li class="nbttn  " onclick="get_checkBox();">Knowledge Graph</li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style=" cursive; color: #fff; background-color:#292929; " id="username"><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-
-
-        
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-
-<div class="container-fluid" >
-	<div class="row">
-		<div class="col-lg-1" style=" padding-left: 0; padding-right: 0; background-color: #393836; height: 100vh; width: 117px;">
-			
-			<!-- sidestbar -->
-			
-
-			<ul class="list-group" style="border-radius: 0; margin-top: 60px; ">
-
-				  <li class="list-group-item"  style="border-radius: 0; border: 0; border-top: 1px solid #585858; cursor: pointer;">DASHBOARD</li>
-
-				  <li class="list-group-item activez"  style="border: 0; color: #18aea3; border-top: 1px solid #585858; border-right: 5px solid #18aea3; cursor: pointer;">EXPLORE</li>
-				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" onclick="location.href='portal.html#'">YOUR BOOK</li>
-				  <li class="list-group-item "  style="border: 0; border-top: 1px solid #585858; cursor: pointer;" >SHARED</li>
-				  <li class="list-group-item"  style="border: 0; border-top: 1px solid #585858; cursor: pointer;">IMPORTANT</li>
-				  
-				  <li class="list-group-item" style="border-radius: 0; border: 0; border-top: 1px solid #585858; border-bottom: 1px solid #585858; cursor: pointer;">COMMUNITY</li>
-			</ul>
-		</div>
+	<head>
+		<title>KnowMap</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="style/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style/icon.css">
+		<link rel="stylesheet" href="style/loader.css">
+		<link rel="stylesheet" href="style/idangerous.swiper.css">
+		<link rel="stylesheet" href="style/stylesheet.css">
+    	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 
-	<div class="col-lg-10 col-sm-10 col-md-10" style=" width: 90.333333%;">
 		
+	</head>
+	<body class="page-login">
+
+	<!-- THE LOADER -->
+	<!-- 	
+	<div class="be-loader">
+	    	<div class="spinner">
+				loader
+				<p class="circle">
+				  <span class="ouro">
+				    <span class="left"><span class="anim"></span></span>
+				    <span class="right"><span class="anim"></span></span>
+				  </span>
+				</p>
+			</div>
+	    </div> -->
+	<!-- THE HEADER -->
+	<header>
+		<div class="container custom-container">
+			<div class="row no_row row-header">
+				<div class="brand-be">
+					<a  href="#" style="font-family: 'Pacifico', cursive; ">KnowMap</a>
+				</div>
+				<div class="login-header-block">
+					<div class="login_block">																	
+						<!-- image of the user and user name here -->
 
 
-<img id="exploader" src="loader/eploreloader.gif" style="position: absolute;  margin:auto ; top: 40%; left: 50%;  ">
-<div id="bookload" style="height: 100vh; width: 100%; overflow: scroll; padding-top: 60px"></div>
-		
+						<div class="be-drop-down login-user-down">
+							<!-- image -->
+							<!-- <img class="login-user" src="img/login.jpg" alt=""> -->
+							<!-- username -->
+							<span class="be-dropdown-content" id="username"></span>
+							
+						</div>
 
-<!-- 
-  <div class="w3-card-4" style="width:25%; margin: 15px; display: inline-block;">
-    <header class="w3-container w3-light-grey">
-      <h4 style="font-weight: 500">KnowBook</h4 >
-    </header>
+						<!-- end username -->
+					</div>	
+				</div>
+				<div class="header-menu-block">
+					<button class="cmn-toggle-switch cmn-toggle-switch__htx"><span></span></button>
+					<ul class="header-menu" id="one">
+						
 
+						
+						<!-- <li><a href="#">Dashboard</a></li> -->
+						<li><a href="#">Explore</a></li>
 
-    <div class="w3-container" style="background-color: #fff;">
-    <p style="text-align: justify;">
-    <p style="font-weight: 600">Topic</p>	
-     Duis aute in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur.
-   	</p>	
-     <p>By @username</p>
-      
-    </div>
-    <button class="w3-button w3-block w3-dark-grey">Read</button>
-  </div>
-
+						<li><a href="userProfile.html">Dashboard</a></li>
+						<!-- <li><a href="#">Important</a></li>
+						<li><a href="#">Shared</a></li>
+						<li><a href="#">Community</a></li>
  -->
 
+						
+					</ul>
+				</div>				
+			</div>
+		</div>
+	</header>	
 
-		
+
+	<!-- MAIN CONTENT -->
+	<div id="content-block">
+		<div class="container be-detail-container">
+			<div class="row">
+				
+
+
+				<div class="col-xs-12 col-md-12">
+                    <div class="tab-wrapper style-1">
+                        
+                        <div class="tabs-content clearfix">
+                            <div class="tab-info active"> 
+
+
+                            	<img id="loader"src="loader/ajax-loader.gif" style="position: absolute;  margin:auto ; display:none ;  top: 30vh; left: 70vh">
+                            	
+								<div class="row " id='renderBook'>
+
+									<!-- <img id="exploader" src="loader/eploreloader.gif" style="position: absolute;  margin:auto ; display: none; top: 40%; left: 50%;  ">
+									
+									<h3 style="position: absolute;  margin:auto ; display: none; top: 40%; left: 40%;  " id="signin_text">
+											please login
+									</h3> -->
+									<!-- <div class="col-ml-12 col-xs-6 col-sm-4">
+										<div class="be-post">
+											<a href="page1.html" class="be-img-block">
+											img tag
+											</a>
+											<a href="page1.html" class="be-post-title">Garry Simpson - Bridges - Intelligent Life Magazinen</a>
+											<span>
+												<a href="page1.html" class="be-post-tag">Interaction Design</a>, 
+												<a href="page1.html" class="be-post-tag">UI/UX</a>,  
+												<a href="page1.html" class="be-post-tag">Web Design</a>
+											</span>
+											<div class="author-post">
+												img tag
+												<span>by <a href="page1.html">Hoang Nguyen</a></span>
+											</div>
+											<div class="info-block">
+												<span><i class="fa fa-thumbs-o-up"></i> 360</span>
+												<span><i class="fa fa-eye"></i> 789</span>
+												<span><i class="fa fa-comment-o"></i> 20</span>
+											</div>
+										</div>									
+									</div> -->
 
 
 
-
-
-
-
-		
-
+								</div>
+                            </div>
+                           
+                           
+                                                  
+                        </div>
+                    </div> 				
+				</div>				
+			</div>
+		</div>
 	</div>
-		
 
-
-
-
-		
-
-
-		
-	</div>
 	
-</div>
+	<!-- SCRIPT	-->
+	<script src="scripts/jquery-2.1.4.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+	<script src="scripts/explore.js"></script>		
 
-
-
-<!--  -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="explore.js"></script>
-
-
-
-
-
-</body>
+	
+	<script src="scripts/global.js"></script>	
+	</body>
 </html>

@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>KnowMap</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="style/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style/icon.css">
+		<link rel="stylesheet" href="style/loader.css">
+		<link rel="stylesheet" href="style/idangerous.swiper.css">
+		<link rel="stylesheet" href="style/stylesheet.css">
+    	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+		<!-- <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    	<link rel="stylesheet" type="text/css" href="style/knowbook.css">
+    	<link rel="stylesheet" type="text/css" href="style/treeandbook.css">
+		
+	</head>
+	<body class="page-login">
+
+	<!-- THE LOADER -->
+	
+<!-- <div class="be-loader">
+    	<div class="spinner">
+			
+			<p class="circle">
+			  <span class="ouro">
+			    <span class="left"><span class="anim"></span></span>
+			    <span class="right"><span class="anim"></span></span>
+			  </span>
+			</p>
+		</div>
+    </div> -->
+
+    <style type="text/css">
+        
+
+    [contenteditable]:focus {
+                      outline: 0px solid transparent;
+                    }
+    </style>
+	<!-- THE HEADER -->
+	<header>
+		<div class="container custom-container">
+			<div class="row no_row row-header">
+				<div class="brand-be">
+					<a  href="explore.html" style="font-family: 'Pacifico', cursive; ">KnowMap</a>
+				</div>
+				<div class="login-header-block">
+					<div class="login_block">																	
+						<!-- image of the user and user name here -->
+
+
+						<div class="be-drop-down login-user-down">
+							<!-- image -->
+							<!-- <img class="login-user" src="img/login.jpg" alt=""> -->
+							<!-- username -->
+							<span class="be-dropdown-content" id="username"></span>
+							
+						</div>
+
+						<!-- end username -->
+					</div>	
+				</div>
+				<div class="header-menu-block">
+					<button class="cmn-toggle-switch cmn-toggle-switch__htx"><span></span></button>
+					<ul class="header-menu" id="one">
+						
+
+						
+						<!-- <li><a href="#">Dashboard</a></li> -->
+						<li><a href="explore.html">Explore</a></li>
+						<li><a href="userProfile.html">My knowBooks</a></li>
+						<!-- <li><a href="#">Important</a></li>
+						<li><a href="#">Shared</a></li>
+						<li><a href="#">Community</a></li> -->
+
+
+						
+					</ul>
+				</div>				
+			</div>
+		</div>
+	</header>	
+
+
+	<!-- MAIN CONTENT  #232835 -->
+	<div id="content-block">
+		<div class="container-fluid be-detail-container">
+			<div class="row">
+				<div class="col-xs-12 col-md-3 left-feild">
+					<div class="be-user-block style-3" id="treerender" >
+
+						<div style="background-color: #191c25; height: 40px; color: #e0e0e0;   font-size: 15px; font-weight: 600; margin-left: -14px; padding-left: 12px; padding-top: 8px;
+						margin-right: -14px;  text-align: left;   margin-top: -28px;  margin-bottom: 17px; ">
+							Content
+						</div>		
+
+						<div id="treeload" style="height:75vh;  text-align: left; ">
+							<!-- tree dom -->
+						</div>
+
+						<div >
+							
+						</div>	
+
+						
+					</div>
+
+				</div>
+
+
+
+				<div class="col-xs-12 col-md-9">
+
+                    <div class="tab-wrapper style-1">
+
+                        
+                        <div class="tabs-content clearfix">
+
+                            <div class="tab-info active"> 
+
+
+                            	<div style="background-color: #eeeeee; height: 40px; color: #fff;      padding-left: 17px; padding-right: 17px; font-size: 15px; font-weight: 600; border-bottom: 1px solid #cacaca">
+
+                            		<ul class="nav navbar-nav  navz" id='navmenu ' >
+
+                            			<li class="nbttn toolbar" >
+                            				<a href="javascript:;" data-command='bold'>	<i class='fa fa-bold'></i></a>
+                            			</li>
+
+                            			<li class="nbttn toolbar" >
+                            				<a href="javascript:;" data-command='italic'><i class='fa fa-italic'></i></a>
+                            			</li>
+
+                            			<li class="nbttn toolbar" >
+                            				<a href="javascript:;" data-command='underline'><i class='fa fa-underline'></i></a>
+                            			</li>
+                            			<li>&nbsp; &nbsp;</li>
+                            			
+
+                            		</ul>	
+
+
+
+
+                            		<ul class="nav navbar-nav  navz" id='navmenu ' >
+                            			<li>&nbsp; &nbsp;</li>
+                            			<li class="nbttn toolbar" >
+                            				<a href="javascript:;" data-command='justifyLeft'>	<i class='fa fa-align-left'></i></a>
+                            			</li>
+
+                            			<li class="nbttn toolbar" >
+                            				<a href="javascript:;" data-command='justifyCenter'>	<i class='fa fa-align-center'></i></a>
+                            			</li>
+
+                            			<li class="nbttn toolbar" >
+                            				<a href="javascript:;" data-command='justifyRight'>	<i class='fa fa-align-right'></i></a>
+                            			</li>
+                            			<li>&nbsp; &nbsp;</li>
+                            			
+
+                            		</ul>	
+
+                            		<ul class="nav navbar-nav  navz" id='navmenu ' >
+                            			<li>&nbsp; &nbsp;</li>
+                            			<li class="nbttn toolbar" >
+                            				<a href="javascript:;" data-command='insertUnorderedList'>	<i class='fa fa-list-ul'></i></a>
+                            			</li>
+
+                            			<li class="nbttn toolbar" >
+                            				<a href="javascript:;" data-command='insertOrderedList'>	<i class='fa fa-list-ol'></i></a>
+                            			</li>
+
+                            			
+                            			<li>&nbsp; &nbsp;</li>
+                            			
+
+                            		</ul>
+
+
+                            		<ul class="nav navbar-nav navbar-right  navr" id='navmenu ' >
+                            			<li>&nbsp; &nbsp;</li>
+                            			<li class="nbttn toolbar" >
+                            				<a href="javascript:;" id="save"><img id="saveloader" src="loader/shadyloader.gif" style="display:none ;"  height="10px" width="10px"/> <i class='fa fa-floppy-o'></i> save</a>
+                            			</li>
+
+                            			<li class="nbttn toolbar" >
+                            				<a href="javascript:;" id="restore"><img id="restoreloader" src="loader/shadyloader.gif"  style="display:none ;" height="10px" width="10px"/>	<i class='fa fa fa-eraser'></i> Restore</a>
+                            			</li>
+
+                                        <!-- <li class="nbttn toolbar" id="save"><img id="saveloader" src="loader/shadyloader.gif"   height="10px" width="10px"/> <i class="fa fa-floppy-o" aria-hidden="true"></i> save</li> -->
+
+                                        
+
+                                     <!--    <li class="nbttn toolbar" ><i class="fa fa-eraser" aria-hidden="true" ></i> Restore in extension</li> -->
+
+                            			
+                            			<li>&nbsp; &nbsp;</li>
+                            			
+
+                            		</ul>
+
+
+                                    <ul class="nav navbar-nav navbar-right  navr" id='navmenu ' >
+                                        <li>&nbsp; &nbsp;</li>
+                                            <li>
+                                            <a id="twitter_share" onclick="twitter_share()">    <i class="fa fa-twitter-square fontsize15" aria-hidden="true"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a id="fb-share" onclick="fb_share();" >    <i class="fa fa-facebook-square fontsize15" aria-hidden="true"></i></a>
+                                        </li>
+
+                                        <li>
+                                            <a id="linkedin-share" onclick="linkedin_share();"> <i class="fa fa-linkedin-square fontsize15" aria-hidden="true"></i></a>
+                                        </li>
+
+                                        
+                                        <li>&nbsp; &nbsp;</li>
+                                        
+
+                                    </ul>
+
+
+
+					
+					 
+								</div>
+
+
+                                <img id="loader" src="loader/ajax-loader.gif" style="position: absolute;  margin:auto ; display:none ; top: 40%; left: 40%;  ">
+								<div class="be-user-block style-3" id="contentload" >	
+									<!-- book load -->
+								</div>
+                            </div>
+                         
+                                                  
+                        </div>
+                    </div> 				
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<!-- modal -->
+
+	<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sub-Topic</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" id="child"  placeholder="topic name">
+      </div>
+      <div class="modal-footer">
+        <button id='childbtn' type="button" class="btn btn-default" data-dismiss="modal">submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="activeWarn" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">You already have an active KnowBook in your extension.Please clear it to make way! </h4>
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+<!-- modal for image -->
+
+
+<div class="modal fade" id="imgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style=" box-shadow: 0; webkit-box-shadow : 0 ;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color: none;">
+      <div class="modal-body">
+      
+        <img  id="img01" width="560" height="315">
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- end -->
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="box-shadow: 0; webkit-box-shadow : 0 ;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="background-color: none;">
+      <div class="modal-body">
+      
+        <iframe id="iframeYoutube" width="560" height="315"   allowfullscreen></iframe> 
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+	<!-- SCRIPT	-->
+	<script src="scripts/jquery-2.1.4.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+	<script src="scripts/knowbook.js"></script>		
+		
+
+	
+	<script src="scripts/global.js"></script>	
+	</body>
+</html>

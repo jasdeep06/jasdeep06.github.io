@@ -1,0 +1,46 @@
+.treenode{
+	list-style: none;
+	 padding: 0;
+	  margin: 0;
+}
+
+.treenodeChild
+{
+	font-weight : 800; color: #ffffff; margin-bottom: 4px;
+}
+
+
+
+.link{
+	color:#ffffff;
+}
+
+
+.ctreenode{
+	list-style: none;
+	 padding-left: 17px;
+	  border-left : 1px solid #BDBDBD;
+}
+
+
+.ctreenodechild{
+	color: #ffffff; margin-bottom: 4px;
+}
+
+.glyphicon-pencil{
+	color:#17acf4;
+}
+
+.id{
+	margin-top:21px
+}
+
+
+.heading{
+	font-weight: 500; display:inline;
+}
+
+
+.blob{
+	background-color :#f7f7f7;     border-radius: 8px;
+}
