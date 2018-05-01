@@ -73,7 +73,7 @@ function save_uid_and_redirect_user(email,uid)
 
 function redirect_to_login(destination)
 {
-	alert("You're fucked!")
+	alert("xxxx")
 }
 
 
