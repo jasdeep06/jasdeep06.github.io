@@ -46,7 +46,12 @@ function get_from_mongo()
 
 
   $('#loader').hide();
+  if(obj[0].liked)
+  {
    bookloader(object,render,obj[0].liked);
+  }else{
+    bookloader(object,render,[]);
+  }
     
 })});
 
