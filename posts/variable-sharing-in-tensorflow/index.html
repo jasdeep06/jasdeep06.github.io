@@ -199,7 +199,7 @@ assert var1==var2
 <p>In the above program when we declare the variable <code class="highlighter-rouge">var1</code>, the <code class="highlighter-rouge">reuse</code> flag was with its default value of <code class="highlighter-rouge">False</code> and so the method <code class="highlighter-rouge">tf.get_variable()</code> searched for variable named <code class="highlighter-rouge">scope1/variable1</code>.As it did not exist,it created a new variable.After setting <code class="highlighter-rouge">reuse</code> to true when we called <code class="highlighter-rouge">tf.get_variable()</code> again to declare variable <code class="highlighter-rouge">var2</code> with same tensorflow name <code class="highlighter-rouge">scope1/variable1</code> it again searched for a variable named <code class="highlighter-rouge">scope1/variable1</code> and this time found it thus returning and storing it in <code class="highlighter-rouge">var2</code>.</p>
 
 <h4 id="name-scopes-in-tensorflow">Name scopes in Tensorflow</h4>
-<p>We saw that <code class="highlighter-rouge">tf.variable_scope</code> affects the variable names declared in that scope.But sometimes in large computation graphs we would like to organize the names of our operations too.This feature is added by name scopes in tensorflow.We can open a name scope by <code class="highlighter-rouge">tf.name_scope</code>.Note that name scopes do not affect the names of variables while the variable scope does not affects the name of operations.A combined usage of name scope and variable scope is shown:</p>
+<p>We saw that <code class="highlighter-rouge">tf.variable_scope</code> affects the variable names declared in that scope.But sometimes in large computation graphs we would like to organize the names of our operations too.This feature is added by name scopes in tensorflow.We can open a name scope by <code class="highlighter-rouge">tf.name_scope</code>.A combined usage of name scope and variable scope is shown:</p>
 
 <div ><pre class="prettyprint"><code>#import tensorflow
 import tensorflow as tf
@@ -224,7 +224,7 @@ variable_scope1/name_scope1/add:0
 </code></pre>
 </div>
 
-<p>From output it is clear that variable scope only affects variable name and name scope only affects operation name.</p>
+<p>From output it is clear that variable scope does affect the operation name and name scope is ignored by <code class="highlighter-rouge">tf.get_variable</code></p>
 
 <p>Although we have not explored  a practical example where namespaces and variable sharing are used but I hope this post helped you understand the concept of variable sharing in tensorflow.We will implement this concept when we will implement complex models like RNNs in tensorflow in future blogposts.</p>
 <br><p style="text-align:center">Posted on 3 February,2017</p>
